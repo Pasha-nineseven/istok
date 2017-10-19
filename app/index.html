@@ -73,18 +73,45 @@
 						<div class="main-slider__bg" style="background-image: url(img/content/main1.jpg)"></div>
 						<div class="main-slider__info">
 							<h1>Накладки для входных дверей</h1>
+							<div class="main-slider__msg">
+								Test test test test test test test test test test test
+							</div>
+							<div class="main-slider__collection">
+								Collection 2013-2011
+							</div>
+							<div class="main-slider-btn-wrap">
+								<a href="#" class="main-slider__btn">В каталог<i></i></a>
+							</div>
 						</div>
 					</div>
 					<div class="main-slider__item">
 						<div class="main-slider__bg" style="background-image: url(img/content/main1.jpg)">2</div>
 						<div class="main-slider__info">
 							<h1>Экошпон</h1>
+							<div class="main-slider__msg">
+								Test test test test test test 
+							</div>
+							<div class="main-slider__collection">
+								Collection 2010-2011
+							</div>
+							<div class="main-slider-btn-wrap">
+								<a href="#" class="main-slider__btn">В каталог<i></i></a>
+							</div>
 						</div>
 					</div>
 					<div class="main-slider__item">
 						<div class="main-slider__bg" style="background-image: url(img/content/main1.jpg)">2</div>
 						<div class="main-slider__info">
 							<h1>Декоративные элементы</h1>
+							<div class="main-slider__msg">
+								Test
+							</div>
+							<div class="main-slider__collection">
+								Collection 2013-2011
+							</div>
+							<div class="main-slider-btn-wrap">
+								<a href="#" class="main-slider__btn">В каталог<i></i></a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -213,7 +240,7 @@
 								<h2>Новости<a href="#" class="link-more">Больше новостей</a></h2>
 							</div>
 							<div class="main-news__slider">
-								<div class="main-news__item main-news__item--img" style="background-image:url(img/content/news1.jpg);">
+								<a href="#" class="main-news__item main-news__item--img" style="background-image:url(img/content/news1.jpg);">
 									<div class="main-news__date-wrap">
 										<div class="main-news__date">
 											06 января 2016
@@ -222,8 +249,8 @@
 									<div class="main-news__title">
 										Batimat Russia 2016: фотоотчет
 									</div>
-								</div>
-								<div class="main-news__item">
+								</a>
+								<a href="#" class="main-news__item">
 									<div class="main-news__date-wrap">
 										<div class="main-news__date">
 											08 января 2016
@@ -235,8 +262,8 @@
 									<div class="main-news__info">
 										Рады сообщить Вам о том, что в продажу поступила совершенно новая серия дверей, под названием «Прага». Уникальный дизайн, разнообразие штрихов и линий, утонченность, а также высокое качество – все это мы обещаем Вам по доступной цене. Будем искренне рады видеть Вас нашим клиентом!
 									</div>
-								</div>
-								<div class="main-news__item">
+								</a>
+								<a href="#" class="main-news__item">
 									<div class="main-news__date-wrap">
 										<div class="main-news__date">
 											16 января 2016
@@ -248,14 +275,27 @@
 									<div class="main-news__info">
 										Test test test
 									</div>
-								</div>
+								</a>
 							</div>
 						</div>
 					</div>
 					<div class="main-video">
 						<div class="container-fluid">
 							<div class="main-video-wrap">
-								test
+								<div class="main-video__bg">
+									<video id="main-video" loop="" autoplay="" preload="auto" poster="video/main.jpg">
+							        	<source src="video/97-video_bg.mp4">
+							       	 	<source type="video/ogg" src="video/97-video_bg.ogv">
+							        	<source type="video/webm" src="video/97-video_bg.webm">
+							      	</video>
+						      	</div>
+						      	<a href="#video-01" class="main-video__play play" data-effect="mfp-zoom-in">
+						      		<div class="play-bar">
+							      		<span class="bar bar-1"></span>
+							      		<span class="bar bar-2"></span>
+							      		<span class="bar bar-3"></span>
+						      		</div>
+						      	</a>
 							</div>
 							<div class="main-video__info">
 								<div class="section-title">
@@ -268,7 +308,6 @@
 								<div class="main-video__person">Дорошевич Иван</div>
 								<div class="main-video__position">Ведущий технолог</div>
 							</div>
-							<a href="#" class="main-video__play"></a>
 						</div>
 					</div>
 					<div class="main-partners">
@@ -319,6 +358,11 @@
 							</div>
 							<div class="page-footer__item">
 								<div class="page-footer__title page-footer__title--address">Адрес</div>
+								<div class="page-footer__address">
+									г. Минск,<br>
+									ул.Краснозвездная,18б<br> 
+									6-й этаж
+								</div>
 							</div>
 						</div>
 					</div>
@@ -333,8 +377,16 @@
 					</div>			
 				</div>
 			</footer>
-			
 		</div><!-- END LAYOUT-->
+
+
+		<div id="video-01" class="popup video-popup mfp-with-anim mfp-hide">
+		   	<video id="popup-video" loop="" autoplay="" preload="auto" poster="video/main.jpg">
+	        	<source src="video/97-video_bg.mp4">
+	       	 	<source type="video/ogg" src="video/97-video_bg.ogv">
+	        	<source type="video/webm" src="video/97-video_bg.webm">
+	      	</video>
+		</div>
 
 		<script src="js/libs.min.js"></script>
 		<script src="js/interface.js"></script>

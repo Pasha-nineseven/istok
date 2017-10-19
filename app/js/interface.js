@@ -117,6 +117,50 @@ $(document).ready(function() {
 		   //  ]
 		});
 	}
+
+
+	//PLAY-PAUSE
+	$('body').on('click', '.main-video__play', function(e){
+	    e.preventDefault();
+
+	    // var vidClip = document.getElementById("main-video"); 
+
+
+	    // if ( $(this).hasClass('play') ) {
+	    //     $(this).removeClass('play');
+	    //     $(this).addClass('pause');
+	    //     $('#main-video').get(0).pause();
+	    // } else {
+	    //     $(this).removeClass('pause');
+	    //     $(this).addClass('play');
+	    //     $('#main-video').get(0).play();
+	    // }
+
+	});
+
+
+	//POPUP-INLINE
+	$('.main-video__play').magnificPopup({
+		type: 'inline',
+		removalDelay: 500,
+		closeBtnInside: true,
+		fixedContentPos: false,
+		callbacks: {
+			beforeOpen: function() {
+				this.st.mainClass = this.st.el.attr('data-effect');
+			},
+			open: function(){
+				$('body').addClass('noscroll');
+				$('#popup-video').get(0).play();
+		    },
+		    close: function() {
+                 $('body').removeClass('noscroll');
+                 $('#popup-video').get(0).pause();
+            }
+		},
+
+		//midClick: true,
+	});
 });
 
 
