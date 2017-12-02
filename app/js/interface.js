@@ -4,6 +4,20 @@ $(document).ready(function() {
 	// 	e.preventDefault();
 	// })
 
+	//TOP-MENU
+	$('body').on('click','.top-menu', function(e){
+		e.preventDefault();
+		$(this).toggleClass('active');
+		// $('.menu-mobile').slideToggle();
+	});
+
+	//TOP-SEARCH
+	$('body').on('click','.top-search', function(e){
+		e.preventDefault();
+		$(this).toggleClass('active');
+		// $('.menu-mobile').slideToggle();
+	});
+
 	//MAIN SLIDER
 	if ($('.main-slider').length>0) {
 		$('.main-slider').slick({
@@ -84,7 +98,7 @@ $(document).ready(function() {
 			
 			useTransform:true,
 			equalizeHeight: false,
-			"accessibility": false,
+			accessibility: false,
   			// responsive: [
 			  //   {
 			  //   breakpoint: 901,
@@ -161,6 +175,51 @@ $(document).ready(function() {
 
 		//midClick: true,
 	});
+
+
+
+
+
+	//ABOUT-PAGE slider
+	if ($('.slider-default').length>0) {
+		var $gallery = $('.slider-default');
+		var slideCount = null;
+
+		$( document ).ready(function() {
+		    $gallery.slick({
+				speed: 250,
+				fade: true,
+				cssEase: 'linear',
+				swipe: true,
+				swipeToSlide: true,
+				touchThreshold: 10,
+				arrows:true,
+				useTransform:true,
+				accessibility: false,
+				infinite: false,
+		    });
+		});
+
+		$gallery.on('init', function(event, slick){
+			slideCount = slick.slideCount;
+			setSlideCount();
+			setCurrentSlideNumber(slick.currentSlide);
+		});
+
+		$gallery.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+		  setCurrentSlideNumber(nextSlide);
+		});
+
+		function setSlideCount() {
+		  var $el = $('.slide-count-wrap').find('.total');
+		  $el.text(slideCount);
+		}
+
+		function setCurrentSlideNumber(currentSlide) {
+		  var $el = $('.slide-count-wrap').find('.current');
+		  $el.text(currentSlide + 1);
+		}
+	};
 });
 
 
@@ -178,16 +237,16 @@ $(window).resize(function () {
 
 
 // links pages
-// $('body').append(
-// 	'<div style="position: fixed; z-index: 1005; bottom: 0; right: 0; background: #fff; border: solid 1px #828286; width: 200px;"> \
-// 		<a href="javascript:void(0);" style="float: right;background:#ccc; color:#000; padding: 5px 10px; text-decoration: none; font-size: 16px" onclick="$(this).parent().hide()">Close X</a> \
-// 	<style> \
-// 		#pages { padding: 10px 20px 0 50px; font-size: 18px; } \
-// 		#pages a { text-decoration: none; } \
-// 		#pages li { margin: 5px 0; } \
-// 	</style> \
-// 	<ol id="pages"> \
-// 		<li><a href="about.html">About</a></li> \
-// 		<li><a href="index.html">Index</a></li> \
-// 	</ol> \
-// </div>');
+$('body').append(
+	'<div style="position: fixed; z-index: 1005; bottom: 0; right: 0; background: #fff; border: solid 1px #828286; width: 200px;"> \
+		<a href="javascript:void(0);" style="float: right;background:#ccc; color:#000; padding: 5px 10px; text-decoration: none; font-size: 16px" onclick="$(this).parent().hide()">Close X</a> \
+	<style> \
+		#pages { padding: 10px 20px 0 50px; font-size: 18px; } \
+		#pages a { text-decoration: none; } \
+		#pages li { margin: 5px 0; } \
+	</style> \
+	<ol id="pages"> \
+		<li><a href="about.html">About</a></li> \
+		<li><a href="index.html">Index</a></li> \
+	</ol> \
+</div>');
