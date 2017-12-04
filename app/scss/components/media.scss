@@ -1,0 +1,28 @@
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+   
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 0) {
+
+}
+
+
+//MEDIA
+@media screen and (max-width: 1400px){
+
+}
+
+
+@media screen and (max-width: 800px){
+	.jrt table,
+	.jrt tbody,
+	.jrt td,
+	.jrt th,
+	.jrt thead,
+	.jrt tr {
+	    text-align: right;
+	}
+	.workarea tr:first-child td {
+	    border-top: 0;
+	}
+}

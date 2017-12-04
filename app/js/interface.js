@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	flexibility(document.documentElement);
+	$.responsiveTables();
 	// $("body").on("click", ".test", function(e){
 	// 	e.preventDefault();
 	// })
@@ -16,6 +17,22 @@ $(document).ready(function() {
 		e.preventDefault();
 		$(this).toggleClass('active');
 		// $('.menu-mobile').slideToggle();
+	});
+
+
+	//LANG TOGGLE
+	$('body').on('click', '.top-language__link', function(e){
+	    e.preventDefault();
+	    $(this).toggleClass('active');
+	    $('.top-language__list').fadeToggle();
+	});
+	$(document).click(function (e){
+		var div = $(".top-language");
+		if (!div.is(e.target)
+		    && div.has(e.target).length === 0) {
+			$('.top-language__link').removeClass('active');
+			$('.top-language__list').fadeOut();
+		}
 	});
 
 	//MAIN SLIDER
@@ -220,6 +237,28 @@ $(document).ready(function() {
 		  $el.text(currentSlide + 1);
 		}
 	};
+
+
+	//POPUP-INLINE
+	$('.default-gallery__link').magnificPopup({
+		type: 'image',
+		gallery:{
+		    enabled:true
+		},
+		removalDelay: 500,
+		closeBtnInside: true,
+		fixedContentPos: false,
+		callbacks: {
+			open: function(){
+				$('body').addClass('noscroll');
+		    },
+		    close: function() {
+                 $('body').removeClass('noscroll');
+            }
+		},
+
+		//midClick: true,
+	});
 });
 
 
