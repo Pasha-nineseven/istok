@@ -16,7 +16,9 @@ $(document).ready(function() {
 	$('body').on('click','.top-search', function(e){
 		e.preventDefault();
 		$(this).toggleClass('active');
-		// $('.menu-mobile').slideToggle();
+		$('.page-header__search').fadeToggle(0);
+		$('body').toggleClass('fixed');
+		$('.page-header').toggleClass('active');
 	});
 
 
