@@ -9,9 +9,20 @@
 
 //MEDIA
 @media screen and (max-width: 1400px){
-
+	.page-aside {
+	    padding-right: 5px;
+	    padding-left: 30px;
+	}
 }
 
+@media screen and (max-width: 1100px){
+	.page-footer__item {
+	    padding-right: 35px;
+	}
+	.page-footer__menu {
+	    padding-left: 25px;
+	}
+}
 
 @media screen and (max-width: 800px){
 	.jrt table,

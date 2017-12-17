@@ -20,6 +20,13 @@ $(document).ready(function() {
 		$('body').toggleClass('fixed');
 		$('.page-header').toggleClass('active');
 	});
+	$('body').on('click','.search-bg', function(e){
+		e.preventDefault();
+		$('.top-search').removeClass('active');
+		$('.page-header__search').fadeOut(0);
+		$('body').removeClass('fixed');
+		$('.page-header').removeClass('active');
+	});
 
 
 	//LANG TOGGLE
@@ -155,20 +162,6 @@ $(document).ready(function() {
 	//PLAY-PAUSE
 	$('body').on('click', '.main-video__play', function(e){
 	    e.preventDefault();
-
-	    // var vidClip = document.getElementById("main-video"); 
-
-
-	    // if ( $(this).hasClass('play') ) {
-	    //     $(this).removeClass('play');
-	    //     $(this).addClass('pause');
-	    //     $('#main-video').get(0).pause();
-	    // } else {
-	    //     $(this).removeClass('pause');
-	    //     $(this).addClass('play');
-	    //     $('#main-video').get(0).play();
-	    // }
-
 	});
 
 
@@ -270,6 +263,81 @@ $(document).ready(function() {
 	$('body').on('focusout','.search-form__input', function(){
 		$(this).parents('.search-form').removeClass('search-form--focus');
 	});
+
+
+	//PRODUCT ACCORDION
+	if ($('.product-accordion').length>0) {
+		$('body').on('click','.product-accordion__link', function(e){
+			e.preventDefault();
+			$(this).toggleClass('active');
+			$(this).next('.product-accordion__info').slideToggle();
+			$('.product-accordion__link').not(this).removeClass('active').next('.product-accordion__info').stop(true,true).slideUp();
+		});
+	};
+
+	//PRODUCT-SLIDER
+	if ($('.product-slider-wrap').length>0) {
+		$('.product__slider').slick({
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			arrows: false,
+			dots:false,
+			fade: true,
+			asNavFor: '.product__thumb'
+		});
+		$('.product__thumb').slick({
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			asNavFor: '.product__slider',
+			dots: false,
+			centerMode: false,
+			focusOnSelect: true,
+			infinite:true,
+			arrows: true,
+			 lazyLoad: 'ondemand',
+		});
+		$('.product__thumb .slick-slide').eq(0).addClass('slick-active');
+		$('.product__slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+			var mySlideNumber = nextSlide;
+		 	$('.product__thumb .slick-slide').removeClass('slick-active');
+		 	$('.product__thumb .slick-slide').eq(mySlideNumber).addClass('slick-active');
+		});
+	};
+
+
+	//COLOR-SELECT
+	$('body').on('click', '.product__color-item', function(e){
+	    e.preventDefault();
+	    $('.product__color-item').removeClass('active');
+	    $(this).addClass('active');
+	    var tColor = $(this).data('color');
+	    console.log(tColor); 
+	});
+
+
+	$('.popup-inline').magnificPopup({
+		type: 'inline',
+		removalDelay: 500,
+		closeBtnInside: false,
+		callbacks: {
+			beforeOpen: function() {
+				this.st.mainClass = this.st.el.attr('data-effect');
+			},
+		},
+	});
+
+
+
+	//PRODUCT-change_photo
+	$('body').on('click', '.construction__pager-item', function(e){
+	    e.preventDefault();
+		$(".construction__pager-item").removeClass('active');
+		$(this).addClass('active');
+        var num = $(this).data('constr');
+        $(".description__item").addClass('dnone');
+        $("#descr"+num).removeClass('dnone');
+        return false;
+    });
 });
 
 
@@ -302,5 +370,6 @@ $('body').append(
 		<li><a href="news-in.html">Новости-внутр</a></li> \
 		<li><a href="search.html">Поиск</a></li> \
 		<li><a href="catalog.html">Каталог</a></li> \
+		<li><a href="card.html">Карточка товара</a></li> \
 	</ol> \
 </div>');
