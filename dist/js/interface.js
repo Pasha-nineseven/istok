@@ -371,5 +371,6 @@ $('body').append(
 		<li><a href="search.html">Поиск</a></li> \
 		<li><a href="catalog.html">Каталог</a></li> \
 		<li><a href="card.html">Карточка товара</a></li> \
+		<li><a href="page404.html">404</a></li> \
 	</ol> \
 </div>');
