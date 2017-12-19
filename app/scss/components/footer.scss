@@ -106,8 +106,13 @@
 	}
 }
 
-.page-footer__btn{
+.page-footer__buttons{
 	float: right;
+	display: inline-block;
+}
+
+.page-footer__btn{
+	
 	display: inline-block;
 	background: #00714e;
 	color: #fff;
@@ -190,4 +195,8 @@
 	font-size: 14px;
 	line-height: 27px;
 	margin-top: -5px;
+}
+
+.socials--mobile{
+	display: none;
 }

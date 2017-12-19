@@ -720,7 +720,8 @@ th {
           box-sizing: border-box; }
 
 html {
-  height: 100%; }
+  height: 100%;
+  min-width: 320px; }
 
 body {
   height: 100%; }
@@ -4284,8 +4285,11 @@ button.mfp-arrow {
     background: #3a5897 url(../img/svg/fb.svg) center no-repeat;
     background-size: 8px 14px; }
 
-.page-footer__btn {
+.page-footer__buttons {
   float: right;
+  display: inline-block; }
+
+.page-footer__btn {
   display: inline-block;
   background: #00714e;
   color: #fff;
@@ -4359,6 +4363,9 @@ button.mfp-arrow {
   line-height: 27px;
   margin-top: -5px; }
 
+.socials--mobile {
+  display: none; }
+
 @media screen and (max-width: 1400px) {
   .page-aside {
     padding-right: 5px;
@@ -4410,13 +4417,17 @@ button.mfp-arrow {
       margin-left: 20px; }
   .socials--desktop {
     display: none; }
+  .socials--mobile {
+    display: block; }
   .page-footer__menu {
     text-align: left; }
   .page-footer__menu {
     padding-left: 0; }
   .page-footer__item {
     width: 50%;
-    margin-right: -4px; } }
+    margin-right: -4px; }
+  .page-footer__btn {
+    margin-bottom: 20px; } }
 
 @media screen and (max-width: 800px) {
   .jrt table,
@@ -4460,4 +4471,32 @@ button.mfp-arrow {
     padding-right: 0;
     margin-bottom: 20px; }
   .page-footer__title {
-    margin-bottom: 13px; } }
+    margin-bottom: 13px; }
+  .page-footer__wrap {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+  .page-footer__left {
+    width: 100%;
+    -webkit-box-ordinal-group: 1;
+    -webkit-order: 0;
+        -ms-flex-order: 0;
+            order: 0; }
+  .page-footer__buttons {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+    width: 100%;
+    text-align: center; }
+  .page-footer__menu {
+    width: 100%;
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+    padding-top: 0; } }

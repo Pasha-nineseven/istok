@@ -73,6 +73,9 @@
 	.socials--desktop{
 		display: none;
 	}
+	.socials--mobile{
+		display: block;
+	}
 	.page-footer__menu{
 		text-align: left;
 	}
@@ -82,6 +85,9 @@
 	.page-footer__item {
 	    width: 50%;
 	    margin-right: -4px;
+	}
+	.page-footer__btn {
+	    margin-bottom: 20px;
 	}
 }
 
@@ -140,5 +146,23 @@
 	}
 	.page-footer__title {
 	    margin-bottom: 13px;
+	}
+	.page-footer__wrap{
+		display: flex;
+		flex-wrap:wrap;
+	}
+	.page-footer__left {
+	    width: 100%;
+	    order: 0;
+	}
+	.page-footer__buttons {
+	    order: 2;
+	    width: 100%;
+	    text-align: center;
+	}
+	.page-footer__menu {
+	    width: 100%;
+	    order: 1;
+	    padding-top: 0;
 	}
 }
