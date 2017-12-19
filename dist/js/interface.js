@@ -8,13 +8,32 @@ $(document).ready(function() {
 	//TOP-MENU
 	$('body').on('click','.top-menu', function(e){
 		e.preventDefault();
+
+		$('.top-search').removeClass('active');
+		$('.page-header__search').fadeOut(0);
+		$('.page-header').removeClass('active');
+
 		$(this).toggleClass('active');
-		// $('.menu-mobile').slideToggle();
+		$('.page-header__menu').fadeToggle(0);
+		$('body').toggleClass('fixed');
+		$('.page-header').toggleClass('menu-active');
+	});
+	$('body').on('click','.menu-bg', function(e){
+		e.preventDefault();
+		$('.top-menu').removeClass('active');
+		$('.page-header__menu').fadeOut(0);
+		$('body').removeClass('fixed');
+		$('.page-header').removeClass('menu-active');
 	});
 
 	//TOP-SEARCH
 	$('body').on('click','.top-search', function(e){
 		e.preventDefault();
+
+		$('.top-menu').removeClass('active');
+		$('.page-header__menu').fadeOut(0);
+		$('.page-header').removeClass('menu-active');
+
 		$(this).toggleClass('active');
 		$('.page-header__search').fadeToggle(0);
 		$('body').toggleClass('fixed');
