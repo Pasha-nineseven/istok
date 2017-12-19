@@ -2,6 +2,7 @@
 	background: #2c2c2c;
 	    padding: 51px 0 81px;
 	color: #fff;
+	    overflow: hidden;
 	.container-fluid{
 		max-width: 1142px;
 	}
@@ -63,6 +64,8 @@
 	margin-bottom: 29px;
 	img{
 		display: block;
+		max-width: 100%;
+		height: auto;
 	}
 }
 
