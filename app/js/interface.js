@@ -354,7 +354,7 @@ $(document).ready(function() {
 		$(this).addClass('active');
         var num = $(this).data('constr');
         $(".description__item").addClass('dnone');
-        $("#descr"+num).removeClass('dnone');
+        $(".descr"+num).removeClass('dnone');
         return false;
     });
 });

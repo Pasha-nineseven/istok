@@ -79,6 +79,7 @@
 	}
 	.top-logo{
 		background: url(../img/content/logo-gr.png) no-repeat; 
+		background-size: contain;
 	}
 	.page-header:before{
 		display: none;
@@ -2846,6 +2847,10 @@ span.page-aside__submenu-item{
 	    	background-size: contain;
 		}
 	}
+}
+
+.construction__img{
+
 }
 
 @import "components/popup";

@@ -20,6 +20,9 @@
 	    width: 33.33%;
 	        padding: 0 15px 25px;
 	}
+	.workarea a.news__item {
+	    padding: 39px 30px 70px;
+	}
 }
 
 @media screen and (max-width: 1100px){
@@ -89,6 +92,21 @@
 	.page-footer__btn {
 	    margin-bottom: 20px;
 	}
+	.layout--404 .page-header {
+	    padding-top: 30px;
+	}
+	.layout--404  .wrapper {
+	    vertical-align: middle;
+	}
+	.layout--404 .page-content {
+	    display: table-cell;
+	    vertical-align: middle;
+	    padding-top: 0;
+	}
+	.workarea a.news__item.news__item--general {
+	    min-height: 300px;
+	    padding: 31px 30px 90px;
+	}
 }
 
 @media screen and (max-width: 800px){
@@ -130,6 +148,15 @@
 	    font-size: 18px;
 	    line-height: 24px;
 	}
+	.retail-link,
+	.wholesale-link,
+	.top-language,
+	.top-phone{
+		display: none;
+	}
+	.page-header__buttons {
+	    padding-top: 12px;
+	}
 }
 
 @media screen and (max-width: 600px){
@@ -164,5 +191,27 @@
 	    width: 100%;
 	    order: 1;
 	    padding-top: 0;
+	}
+	.page-header__buttons{
+		display: none;
+	}
+	.top-logo{
+		width: 158px;
+		height: 41px;
+		background-size: contain;
+	}
+	.page-header__links {
+	    padding-top: 0;
+	}
+	.top-menu{
+		margin-left: 10px;
+	}
+	.layout--404 .workarea h1{
+		font-size: 30px;
+		    line-height: 1.2;
+	}
+	.workarea a.news__item {
+	   width: 100%;
+	   margin-right: 0;
 	}
 }
