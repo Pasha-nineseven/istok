@@ -109,6 +109,13 @@
 	}
 }
 
+
+@media screen and (max-width: 992px){
+	.page-aside{
+		display: none;
+	}
+}
+
 @media screen and (max-width: 800px){
 	.jrt table,
 	.jrt tbody,
