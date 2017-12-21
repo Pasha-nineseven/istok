@@ -845,7 +845,10 @@
 
 
 .new__slider{
-	
+	display: none;
+	&.slick-initialized{
+		display: block;
+	}
 	.slick-list{
 		padding-top: 30px;
 	}
@@ -1626,7 +1629,8 @@
 	margin-bottom: 40px;
 	text-align: center;
 	overflow: hidden;
-	    padding: 10px 0;
+	    padding: 10px 50px;
+	    position: relative;
 }
 .workarea a.paging__item,
 .paging__item{
@@ -1682,12 +1686,16 @@
 }
 .workarea a.paging__prev,
 .paging__prev{
-	float: left;
+	float: none;
+	display: inline-block;
+	position: absolute;
+	top: 10px;
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
 	background: #ebf4f1 url(../img/svg/d-arrow.svg) center no-repeat;
     background-size: 20px 15px;
+    left: 0;
     &:hover{
     	background: #ebf4f1 url(../img/svg/d-arrow.svg) center no-repeat;
     	background-size: 20px 15px;
@@ -1695,13 +1703,17 @@
 }
 .workarea a.paging__next,
 .paging__next{
-	float: right;
+	float: none;
+	display: inline-block;
+	position: absolute;
+	top: 10px;
 	width: 40px;
 	height: 40px;
 	border-radius: 50%;
 	background: #ebf4f1 url(../img/svg/d-arrow.svg) center no-repeat;
     background-size: 20px 15px;
     transform: rotate(180deg);
+    right: 0;
     &:hover{
     	background: #ebf4f1 url(../img/svg/d-arrow.svg) center no-repeat;
     	background-size: 20px 15px;

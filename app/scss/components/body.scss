@@ -20,6 +20,11 @@ body{
 		width: 100%;
 		overflow: hidden;
 	}
+	&.fixed-menu{
+		position: fixed;
+		width: 100%;
+		overflow: hidden;
+	}
 }
 *:focus {
 	outline: none;
