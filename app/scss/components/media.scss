@@ -124,12 +124,21 @@
 	    min-height: 300px;
 	    padding: 31px 30px 90px;
 	}
+	.menu__top-link {
+	    font-size: 24px;
+	}
 }
 
 
 @media screen and (max-width: 992px){
 	.page-aside{
 		display: none;
+	}
+}
+
+@media screen and (max-width: 900px){
+	.menu__top-link {
+	    font-size: 20px;
 	}
 }
 
@@ -202,6 +211,46 @@
 	    left: 0;
 	    z-index: 5;
 	}
+	.menu__wrap{
+		padding-top: 120px;
+	}
+	.menu__item {
+	    display: block;
+	    width: 100%;
+	    padding-top: 15px;
+	    margin-top: 0;
+	    margin-right: 0;
+	    opacity: 0;
+	}
+	.menu__item:hover .menu__top-link {
+	    transform: inherit;
+	}
+	.menu__second {
+	    margin-top: 0;
+	    opacity: 1;
+	    display: none;
+	}
+	.menu__top-link{
+		font-size: 28px;
+	}
+	.menu__list {
+	    border-top: 0;
+	}
+	.menu__item{
+		padding-bottom: 15px;
+		border-top: 1px solid #c6dfd7;
+		&:last-child{
+			border-bottom: 1px solid #c6dfd7;
+		}
+	}
+	.menu__socials {
+	    padding-top: 30px;
+	    padding-bottom: 30px;
+	}
+	// .menu__wrap:before {
+	//     position: fixed;
+	//     height: 200vh;
+	// }
 }
 
 @media screen and (max-width: 600px){
@@ -265,5 +314,26 @@
 	}
 	.paging__wrap{
 		background: transparent;
+	}
+	.slider-default__img {
+	    height: 260px;
+	}
+	.search__wrap {
+	    padding-top: 90px;
+	}
+	.search-form input[type="text"],
+	.search-form input[type="email"],
+	.search-form input[type="password"],
+	.search-form input[type="email"] {
+	    font-size: 18px;
+	}
+	.search-form ::-webkit-input-placeholder {font-size: 18px;}
+	.search-form ::-moz-placeholder          {font-size: 18px;}
+	.search-form :-moz-placeholder           {font-size: 18px;}
+	.search-form :-ms-input-placeholder      {font-size: 18px;}
+
+	.search__socials {
+	    padding-top: 40px;
+	    padding-bottom: 25px;
 	}
 }

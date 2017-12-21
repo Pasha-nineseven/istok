@@ -7,6 +7,8 @@
 	    padding: 18px 0 22px;
 	color: #fff;
 	z-index: 10;
+	// max-height: 100vh;
+ //    overflow-y: auto;
 	&:before{
 		content: "";
 		display: block;
@@ -669,6 +671,8 @@ a.breadcrumbs__item{
     transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1);
     //transition-delay: 0.25s;
     transition-delay: 0.4s;
+        max-height: 100vh;
+    overflow-y: auto;
 	&:before{
 		content: "";
 		display: block;
