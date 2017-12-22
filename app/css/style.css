@@ -3381,6 +3381,8 @@ span.page-aside__submenu-item:hover {
       -webkit-transform: translate(-50%, -50px);
           -ms-transform: translate(-50%, -50px);
               transform: translate(-50%, -50px); }
+  .catalog__item:nth-child(4n+4) .catalog__img:after {
+    display: none; }
 
 .catalog__img {
   display: inline-block;
@@ -3393,13 +3395,23 @@ span.page-aside__submenu-item:hover {
   display: block;
   text-decoration: none;
   background: transparent !important;
-  padding: 0 !important; }
+  padding: 0 !important;
+  position: relative; }
   .catalog__img img {
     max-width: 100%;
     height: auto;
     max-height: 100%;
     display: inline-block;
     vertical-align: middle; }
+  .catalog__img:after {
+    content: "";
+    width: 1px;
+    height: 250px;
+    background: #ebf4f1;
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    margin-top: -125px; }
 
 .catalog__cat {
   font-size: 12px;

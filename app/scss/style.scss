@@ -2166,6 +2166,14 @@ span.page-aside__submenu-item{
 			transform: translate(-50%,-50px);
 		}
 	}
+	&:nth-child(4n+4){
+		.catalog__img{
+			&:after{
+				display: none;
+			}
+		}
+	}
+
 }
 
 .catalog__img{
@@ -2179,12 +2187,23 @@ span.page-aside__submenu-item{
 	text-decoration: none;
 	background: transparent!important;
 	padding: 0!important;
+	position: relative;
 	img{
 		max-width: 100%;
 		height: auto;
 		max-height: 100%;
 		display: inline-block;
 		vertical-align: middle;
+	}
+	&:after{
+		content: "";
+		width: 1px;
+		height: 250px;
+		background: #ebf4f1;
+		position: absolute;
+		right: -30px;
+		top: 50%;
+		margin-top: -125px;
 	}
 }
 
