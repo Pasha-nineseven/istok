@@ -2173,6 +2173,13 @@ span.page-aside__submenu-item{
 			}
 		}
 	}
+	&:last-child{
+		.catalog__img{
+			&:after{
+				display: none;
+			}
+		}
+	}
 
 }
 
@@ -2882,6 +2889,124 @@ span.page-aside__submenu-item{
 
 .construction__img{
 
+}
+
+
+.filter{
+	position: relative;
+    z-index: 10;
+    top: -55px;
+    input[type="radio"]:not(:checked),
+	input[type="radio"]:checked{
+		position: absolute;
+		left: -9999px;
+	}
+	input[type="radio"]:not(:checked) + label,
+	input[type="radio"]:checked + label{
+		position: relative;
+		cursor: pointer;
+		padding-left: 28px;
+		line-height: 18px;
+		display: inline-block;
+	}
+	input[type="radio"]:not(:checked) + label:before,
+	input[type="radio"]:checked + label:before{
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 18px;
+		height: 18px;
+		border: 1px solid #db1b3c;
+		cursor: pointer;
+		z-index: 5;
+		@include border-radius(50%); 
+	}
+	input[type="radio"]:not(:checked) + label:after,
+	input[type="radio"]:checked + label:after {
+	  content: '';
+	  background: #db1b3c;
+	  width: 12px;
+	  height: 12px;
+	  display: inline-block;
+	  position: absolute;
+	  top: 3px;
+	  left: 3px;
+	  z-index: 10;
+	  @include border-radius(50%);
+	}
+	input[type="checkbox"]:not(:checked) + label:after {
+	  opacity: 0;
+	}
+	input[type="checkbox"]:checked + label:after {
+	  opacity: 1;
+	}
+}
+
+.filter__inner{
+	background: #fff;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.45);
+    padding: 20px 20px 45px;
+    width: 100%;
+}
+
+.filter__inner{
+	display: flex;
+	flex-wrap:wrap;
+	text-align:center;
+}
+
+.filter__item{
+	width: 25%;
+	    padding-right: 25px;
+	    &:last-child{
+	    	padding-right: 0;
+	    	.filter__list{
+	    		margin-right: 0;
+	    	}
+	    }
+}
+
+.workarea .filter__cat{
+	display: block;
+	font-size: 18px;
+	color: #000;
+	background: #fff;
+	transition:all 0.3s ease;
+	padding: 5px;
+	&:hover{
+		background: #ebf4f1;
+		color: #00714e;
+	}
+	&.active{
+		background: #ebf4f1;
+		color: #00714e;
+		span{
+			&:before{
+				opacity: 1;
+			}
+		}
+	}
+	span{
+		position: relative;
+		&:before{
+			content: "";
+			width: 11px;
+			height: 9px;
+			background: url(../img/content/check.png) center no-repeat;
+			position: absolute;
+			left: -25px;
+			top: 50%;
+			margin-top: -4px;
+			opacity: 0;
+		}
+	}
+}
+
+.filter__list{
+	border-top: 1px solid #c6ded6;
+	padding-top: 10px;
+	margin-right: -25px;
 }
 
 @import "components/popup";

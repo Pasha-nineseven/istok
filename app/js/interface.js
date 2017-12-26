@@ -357,6 +357,12 @@ $(document).ready(function() {
         $(".descr"+num).removeClass('dnone');
         return false;
     });
+
+    //FILTER-TOGGLE
+	$('body').on('click', '.filter__cat', function(e){
+	    e.preventDefault();
+		$(this).toggleClass('active');
+    });
 });
 
 
