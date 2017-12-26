@@ -361,7 +361,14 @@ $(document).ready(function() {
     //FILTER-TOGGLE
 	$('body').on('click', '.filter__cat', function(e){
 	    e.preventDefault();
+	    $(this).parents('.filter__item').siblings('.filter__item').find('.filter__cat').removeClass('active');
 		$(this).toggleClass('active');
+		$('.filter__list').slideDown();
+    });
+    $('body').on('click', '.turn-filter', function(e){
+	    e.preventDefault();
+		$('.filter__cat').removeClass('active');
+		$('.filter__list').slideUp();
     });
 });
 
