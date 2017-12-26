@@ -4051,6 +4051,9 @@ span.page-aside__submenu-item:hover {
   -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.45);
           box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.45);
   padding: 20px;
+  width: 100%; }
+
+.filter__items {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -4092,7 +4095,7 @@ span.page-aside__submenu-item:hover {
     transition: opacity 0.3s ease;
     opacity: 0; }
   .workarea .filter__cat:hover {
-    background: #ebf4f1;
+    background: transparent;
     color: #00714e; }
     .workarea .filter__cat:hover:after {
       opacity: 1; }
@@ -4131,18 +4134,21 @@ span.page-aside__submenu-item:hover {
 
 .filter__buttons {
   width: 100%;
-  padding-top: 50px; }
-
-.filter__buttons input[type="reset"] {
-  font-size: 11px;
-  display: inline-block;
-  background: transparent;
-  color: #00714e;
-  font-family: Verdana, sans-serif;
-  border: 0; }
-
-.filter__buttons .btn {
-  padding: 6px 45px; }
+  padding-top: 25px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-align: center; }
+  .filter__buttons input[type="reset"] {
+    font-size: 11px;
+    display: inline-block;
+    background: transparent;
+    color: #00714e;
+    font-family: Verdana, sans-serif;
+    border: 0; }
+  .filter__buttons .btn {
+    padding: 6px 45px; }
+  .filter__buttons.active {
+    padding-top: 50px; }
 
 .reset-item {
   display: inline-block;
@@ -4177,6 +4183,71 @@ span.page-aside__submenu-item:hover {
   transition: all 0.3s ease; }
   .turn-filter:hover {
     opacity: 0.7; }
+
+.workarea .filter__submit,
+.workarea .turn-filter {
+  display: none; }
+
+.workarea .filter__buttons.active .filter__submit,
+.workarea .filter__buttons.active .turn-filter {
+  display: inline-block; }
+
+.filter--mobile {
+  display: none; }
+
+.workarea .filter-mobile__toggle {
+  padding: 0;
+  padding-right: 20px;
+  color: #000 !important;
+  width: 100%;
+  background: transparent !important;
+  position: relative;
+  display: block; }
+  .workarea .filter-mobile__toggle:after {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 6px;
+    right: 10px;
+    margin-left: -5px;
+    top: 50%;
+    margin-top: -3px;
+    background: url(../img/content/cat-arr.png) no-repeat;
+    position: absolute;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+  .workarea .filter-mobile__toggle.active:after {
+    -webkit-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+            transform: rotate(-180deg); }
+
+.filter-mobile__list {
+  display: none; }
+
+.filter-mobile__list {
+  padding: 15px 0; }
+
+.filter-mobile__item {
+  margin-bottom: 10px; }
+  .filter-mobile__item:last-child {
+    margin-bottom: 0; }
+  .filter-mobile__item select {
+    opacity: 0;
+    position: absolute; }
+  .filter-mobile__item .jq-selectbox__select {
+    height: 32px;
+    padding: 0 45px 0 10px;
+    border: 1px solid #ccc;
+    border-bottom-color: #b3b3b3;
+    -webkit-border-radius: 4px;
+            border-radius: 4px;
+    background: transparent;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    font: inherit;
+    color: inherit;
+    text-shadow: none;
+    position: relative; }
 
 .popup {
   margin: 0 auto;
@@ -4775,7 +4846,20 @@ button.mfp-arrow {
     min-height: 300px;
     padding: 31px 30px 90px; }
   .menu__top-link {
-    font-size: 24px; } }
+    font-size: 24px; }
+  .workarea .filter__cat {
+    font-size: 16px;
+    padding: 5px 3px; }
+  .filter__inner {
+    padding: 10px; }
+  .filter__item {
+    padding-right: 5px; }
+    .filter__item:last-child {
+      padding-right: 0; }
+  .filter input[type="checkbox"]:not(:checked) + label span, .filter input[type="checkbox"]:checked + label span {
+    padding-left: 15px; }
+  .filter__buttons.active {
+    padding-top: 30px; } }
 
 @media screen and (max-width: 992px) {
   .page-aside {
@@ -4783,7 +4867,9 @@ button.mfp-arrow {
 
 @media screen and (max-width: 900px) {
   .menu__top-link {
-    font-size: 20px; } }
+    font-size: 20px; }
+  .filter__item-box {
+    font-size: 13px; } }
 
 @media screen and (max-width: 800px) {
   .jrt table,
@@ -4873,7 +4959,13 @@ button.mfp-arrow {
     opacity: 1;
     -webkit-transform: translate(-50%, -50px);
         -ms-transform: translate(-50%, -50px);
-            transform: translate(-50%, -50px); } }
+            transform: translate(-50%, -50px); }
+  .filter--desktop {
+    display: none; }
+  .filter--mobile {
+    display: block; }
+  .search__wrap {
+    padding-top: 120px; } }
 
 @media screen and (max-width: 650px) {
   .catalog__item {

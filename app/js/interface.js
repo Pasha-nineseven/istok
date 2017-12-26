@@ -362,14 +362,28 @@ $(document).ready(function() {
 	$('body').on('click', '.filter__cat', function(e){
 	    e.preventDefault();
 	    $(this).parents('.filter__item').siblings('.filter__item').find('.filter__cat').removeClass('active');
-		$(this).toggleClass('active');
+		$(this).addClass('active');
+		$('.filter__buttons').addClass('active');
 		$('.filter__list').slideDown();
     });
     $('body').on('click', '.turn-filter', function(e){
 	    e.preventDefault();
 		$('.filter__cat').removeClass('active');
 		$('.filter__list').slideUp();
+		$('.filter__buttons').removeClass('active');
     });
+
+    //FILTER-MOBILE-TOGGLE
+	$('body').on('click', '.filter-mobile__toggle', function(e){
+	    e.preventDefault();
+	    $(this).toggleClass('active');
+	    $(this).next('.filter-mobile__list').slideToggle();
+    });
+
+    //SELECT-CUSTOM
+	if ($('.fs').length>0) {
+		$('.fs').styler();
+	}
 });
 
 
