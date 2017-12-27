@@ -2709,7 +2709,9 @@ span.page-aside__submenu-item{
 
 .construction{
 	position: relative;
-	padding-bottom: 115px;
+	padding-top: 135px;
+	padding-bottom: 135px;
+	color: #fff;
 	h2{
 		font-size: 52px;
 		line-height: 60px;
@@ -2798,6 +2800,13 @@ span.page-aside__submenu-item{
 	z-index: 3;
 }
 
+.construction__item--info{
+	padding-top: 143px;
+	font-size: 14px;
+    line-height: 1.6;
+    padding-right: 60px;
+}
+
 .construction__info{
 	color: #fff;
 	padding-right: 210px;
@@ -2807,8 +2816,9 @@ span.page-aside__submenu-item{
 }
 
 .construction__item{
-	width: 50%;
-	padding-top: 135px;
+	width: 33.333%;
+	// float: left;
+	//padding-top: 135px;
 }
 
 .construction__description{
@@ -2828,6 +2838,10 @@ span.page-aside__submenu-item{
 	width: 100%;
 	transform:translateY(17px);
 	z-index: 5;
+}
+
+.construction__slider-item{
+	padding-top: 25px;
 }
 
 .construction__pager-wrap{
@@ -2852,6 +2866,24 @@ span.page-aside__submenu-item{
 	&.active{
 		background: #ebf4f1;
 		color: #05694a;
+	}
+}
+
+.construction__item--links{
+	padding-left: 60px;
+	margin-top: -25px;
+}
+
+.construction__item-wrap{
+	display: flex;
+	flex-wrap:wrap;
+
+}
+
+.construction__top{
+	position: absolute;
+	h2{
+		margin-bottom: 0;
 	}
 }
 
@@ -2889,8 +2921,11 @@ span.page-aside__submenu-item{
 	}
 }
 
-.construction__img{
-
+.construction__item--img{
+	height: 530px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center top;
 }
 
 
