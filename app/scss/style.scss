@@ -3149,7 +3149,6 @@ span.page-aside__submenu-item{
 	    height: 32px;
 	    padding: 0 45px 0 10px;
 	    border: 1px solid #ccc;
-	    border-bottom-color: #b3b3b3;
 	    border-radius: 4px;
 	    background: transparent;
 	    box-shadow: none;
@@ -3166,6 +3165,11 @@ span.page-aside__submenu-item{
     z-index: 1!important;
     &.opened{
     	z-index: 3!important;
+    }
+    &.focused{
+    	.jq-selectbox__select{
+    		border: 1px solid #ccc;
+    	}
     }
 }
 
@@ -3190,6 +3194,29 @@ span.page-aside__submenu-item{
 
 .jq-selectbox__trigger{
 	border-left: 0;
+}
+
+
+.workarea a.descr-info__item{
+	    margin-bottom: 30px;
+    padding: 13px 20px;
+    line-height: 1.5;
+	background: rgba(255, 255, 255, 0.05);
+	color: #9e9590;
+	display: block;
+	transition:all 0.3s ease;
+	font-size: 14px;
+	border-radius: 2px;
+	&:last-child{
+		margin-bottom: 0;
+	}
+	&:hover{
+		background: rgba(255, 255, 255, 0.08);
+	}
+	&.active{
+		background: #046a4a;
+		color: #fff;
+	}
 }
 
 @import "components/popup";
