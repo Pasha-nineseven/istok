@@ -396,15 +396,27 @@ $(document).ready(function() {
 
 
 	//PRODUCT-change_photo
-	// $('body').on('click', '.construction__pager-item', function(e){
-	//     e.preventDefault();
-	// 	$(".construction__pager-item").removeClass('active');
-	// 	$(this).addClass('active');
- //        var num = $(this).data('constr');
- //        $(".description__item").addClass('dnone');
- //        $(".descr"+num).removeClass('dnone');
- //        return false;
- //    });
+	$('body').on('click', '.construction-show__item', function(e){
+	    e.preventDefault();
+		$(".construction-show__item").removeClass('active');
+		$(this).addClass('active');
+        var scale = $(this).data('scale');
+        $(".descr-info__item").removeClass('active');
+        $("#descr"+scale).addClass('active');
+        return false;
+    });
+
+    $('body').on('click', '.descr-info__item', function(e){
+	    e.preventDefault();
+		$(".descr-info__item").removeClass('active');
+		$(this).addClass('active');
+
+        var link = $(this).data('link');
+ 
+        $(".construction-show__item").removeClass('active');
+        $(".construction-show__item[data-scale='" + link +"']").addClass('active');
+        return false;
+    });
 
     //FILTER-TOGGLE
 	$('body').on('click', '.filter__cat', function(e){
