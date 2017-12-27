@@ -311,6 +311,12 @@
 	.search__wrap {
 	    padding-top: 120px;
 	}
+	.menu__item,
+	.page-header .search{
+	    opacity: 1;
+	    transform: none;
+	    transition: none;
+	}
 }
 
 @media screen and (max-width: 650px){
