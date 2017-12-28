@@ -214,14 +214,31 @@ $(document).ready(function() {
 			useTransform:true,
 			equalizeHeight: false,
 			"accessibility": false,
-  			// responsive: [
-			  //   {
-			  //   breakpoint: 901,
-			  //     settings: {
-
-			  //     }
-			  //   },
-		   //  ]
+  			responsive: [
+			    {
+			      breakpoint: 1100,
+			      settings: {
+			        slidesToShow: 4,
+			        slidesToScroll: 1,
+			        infinite: true,
+			        dots: true
+			      }
+			    },
+			    {
+			      breakpoint: 850,
+			      settings: {
+			        slidesToShow: 3,
+			        slidesToScroll: 2
+			      }
+			    },
+			    // {
+			    //   breakpoint: 480,
+			    //   settings: {
+			    //     slidesToShow: 1,
+			    //     slidesToScroll: 1
+			    //   }
+			    // }
+			]
 		});
 	}
 

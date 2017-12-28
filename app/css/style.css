@@ -1977,7 +1977,8 @@ a.breadcrumbs__item {
   text-align: center;
   position: relative;
   z-index: 3;
-  color: #fff; }
+  color: #fff;
+  padding: 0 100px; }
   .main-slider__info h1 {
     font-size: 74px;
     font-family: 'Rubik', sans-serif;
@@ -4932,7 +4933,19 @@ button.mfp-arrow {
 @media screen and (max-width: 1400px) {
   .page-aside {
     padding-right: 5px;
-    padding-left: 30px; } }
+    padding-left: 30px; }
+  .new__slider .slick-next,
+  .main-news__slider .slick-next,
+  .main-partners__slider .slick-next {
+    right: -40px; }
+  .new__slider .slick-prev,
+  .main-news__slider .slick-prev,
+  .main-partners__slider .slick-prev {
+    left: -40px; }
+  .new__slider,
+  .main-news__slider,
+  .main-partners__slider {
+    padding: 0 40px; } }
 
 @media screen and (max-width: 1200px) {
   .catalog__item {
@@ -4954,7 +4967,15 @@ button.mfp-arrow {
   .catalog__item:nth-child(3n+3) .catalog__img:after {
     display: none; }
   .catalog__item:last-child .catalog__img:after {
-    display: none; } }
+    display: none; }
+  .main-news {
+    padding: 60px 0 80px; }
+  .main-partners {
+    padding: 70px 0 60px; }
+  .construction {
+    padding-top: 70px; }
+  .main-slider__info h1 {
+    font-size: 60px; } }
 
 @media screen and (max-width: 1100px) {
   .page-footer__item {
@@ -5038,7 +5059,11 @@ button.mfp-arrow {
   .filter input[type="checkbox"]:not(:checked) + label span, .filter input[type="checkbox"]:checked + label span {
     padding-left: 15px; }
   .filter__buttons.active {
-    padding-top: 30px; } }
+    padding-top: 30px; }
+  .main-slider__pager a {
+    padding: 20px 5px; }
+  .main-slider__item {
+    padding-bottom: 110px; } }
 
 @media screen and (max-width: 992px) {
   .page-aside {
