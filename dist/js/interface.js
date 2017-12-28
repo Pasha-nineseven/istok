@@ -214,14 +214,31 @@ $(document).ready(function() {
 			useTransform:true,
 			equalizeHeight: false,
 			"accessibility": false,
-  			// responsive: [
-			  //   {
-			  //   breakpoint: 901,
-			  //     settings: {
-
-			  //     }
-			  //   },
-		   //  ]
+  			responsive: [
+			    {
+			      breakpoint: 1100,
+			      settings: {
+			        slidesToShow: 4,
+			        slidesToScroll: 1,
+			        infinite: true,
+			        dots: true
+			      }
+			    },
+			    {
+			      breakpoint: 850,
+			      settings: {
+			        slidesToShow: 3,
+			        slidesToScroll: 2
+			      }
+			    },
+			    // {
+			    //   breakpoint: 480,
+			    //   settings: {
+			    //     slidesToShow: 1,
+			    //     slidesToScroll: 1
+			    //   }
+			    // }
+			]
 		});
 	}
 
@@ -361,7 +378,37 @@ $(document).ready(function() {
 			focusOnSelect: true,
 			infinite:true,
 			arrows: true,
-			 lazyLoad: 'ondemand',
+			lazyLoad: 'ondemand',
+			responsive: [
+			    {
+			      breakpoint: 1100,
+			      settings: {
+			        slidesToShow: 2,
+			        slidesToScroll: 1,
+			      }
+			    },
+			    {
+			      breakpoint: 992,
+			      settings: {
+			        slidesToShow: 3,
+			        slidesToScroll: 1
+			      }
+			    },
+			    {
+			      breakpoint: 600,
+			      settings: {
+			        slidesToShow: 2,
+			        slidesToScroll: 1
+			      }
+			    },
+			    {
+			      breakpoint: 450,
+			      settings: {
+			        slidesToShow: 1,
+			        slidesToScroll: 1
+			      }
+			    },
+			]
 		});
 		$('.product__thumb .slick-slide').eq(0).addClass('slick-active');
 		$('.product__slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
@@ -386,10 +433,17 @@ $(document).ready(function() {
 		type: 'inline',
 		removalDelay: 500,
 		closeBtnInside: false,
+		fixedContentPos: false,
 		callbacks: {
 			beforeOpen: function() {
 				this.st.mainClass = this.st.el.attr('data-effect');
 			},
+			open: function(){
+				$('body').addClass('noscroll');
+		    },
+		    close: function() {
+                 $('body').removeClass('noscroll');
+            }
 		},
 	});
 

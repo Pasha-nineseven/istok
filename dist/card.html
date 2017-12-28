@@ -148,6 +148,12 @@
 				<div class="page-content workarea">
 					<div class="container-fluid">
 						<!-- CONTENT-PART -->
+						<div class="breadcrumbs">
+							<a href="#" class="breadcrumbs__item">Главная</a>
+							<a href="#" class="breadcrumbs__item">Каталог</a>
+							<a href="#" class="breadcrumbs__item">Двери «Экошпон»</a>
+							<span class="breadcrumbs__item">Горизонталь-3</span>
+						</div>
 						<div class="row">
 							<div class="col-md-6 product-img">
 								<a href="#" class="back">Назад в каталог</a>
@@ -220,12 +226,6 @@
 								</div>
 							</div>
 							<div class="col-md-4 col-md-push-1 product-info">
-								<div class="breadcrumbs">
-									<a href="#" class="breadcrumbs__item">Главная</a>
-									<a href="#" class="breadcrumbs__item">Каталог</a>
-									<a href="#" class="breadcrumbs__item">Двери «Экошпон»</a>
-									<span class="breadcrumbs__item">Горизонталь-3</span>
-								</div>
 								<h1>Горизонталь</h1>
 								<div class="collection-name">Коллекция Горизонталь</div>
 								<div class="product-info__txt">
@@ -330,7 +330,7 @@
 		</div><!-- END LAYOUT-->
 
 
-		<div id="application" class="popup-inline mfp-with-anim mfp-hide">
+		<div id="application" class="popup popup-info mfp-with-anim mfp-hide">
 			<div class="popup-inline__img">
 				ddd
 			</div>
@@ -339,15 +339,19 @@
 					<h3>Оставить заявку</h3>
 					<form action="#" method="POST">
 						<div class="input-wrap">
-							<div class="feedback-label">Имя:</div>
+							<div class="feedback-label">ФИО:</div>
 							<input type="text">
 						</div>
-						<div class="input-wrap">
-							<div class="feedback-label">Эл. почта:</div>
+						<div class="input-wrap input-wrap--error">
+							<div class="feedback-label">Электронная почта:</div>
 							<input type="email">
 						</div>
 						<div class="input-wrap">
-							<div class="feedback-label">Текст сообщения:</div>
+							<div class="feedback-label">Номер телефона:</div>
+							<input type="text">
+						</div>
+						<div class="input-wrap">
+							<div class="feedback-label">Дополнительный комментарий:</div>
 							<textarea></textarea>
 						</div>
 						<div class="input-wrap input-wrap--submit">
