@@ -403,10 +403,17 @@ $(document).ready(function() {
 		type: 'inline',
 		removalDelay: 500,
 		closeBtnInside: false,
+		fixedContentPos: false,
 		callbacks: {
 			beforeOpen: function() {
 				this.st.mainClass = this.st.el.attr('data-effect');
 			},
+			open: function(){
+				$('body').addClass('noscroll');
+		    },
+		    close: function() {
+                 $('body').removeClass('noscroll');
+            }
 		},
 	});
 
