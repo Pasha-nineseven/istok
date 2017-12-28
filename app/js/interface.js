@@ -378,7 +378,37 @@ $(document).ready(function() {
 			focusOnSelect: true,
 			infinite:true,
 			arrows: true,
-			 lazyLoad: 'ondemand',
+			lazyLoad: 'ondemand',
+			responsive: [
+			    {
+			      breakpoint: 1100,
+			      settings: {
+			        slidesToShow: 2,
+			        slidesToScroll: 1,
+			      }
+			    },
+			    {
+			      breakpoint: 992,
+			      settings: {
+			        slidesToShow: 3,
+			        slidesToScroll: 1
+			      }
+			    },
+			    {
+			      breakpoint: 600,
+			      settings: {
+			        slidesToShow: 2,
+			        slidesToScroll: 1
+			      }
+			    },
+			    {
+			      breakpoint: 450,
+			      settings: {
+			        slidesToShow: 1,
+			        slidesToScroll: 1
+			      }
+			    },
+			]
 		});
 		$('.product__thumb .slick-slide').eq(0).addClass('slick-active');
 		$('.product__slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){

@@ -178,6 +178,13 @@
 			z-index: -1;
 		}
 	}
+	.breadcrumbs{
+		margin-left: 50%;
+		position: relative;
+		left: 8.33333%;
+		padding-left: 10px;
+		    margin-bottom: 25px;
+	}
 }
 
 .layout--404{
@@ -2400,7 +2407,7 @@ span.page-aside__submenu-item{
 .workarea .product-accordion__link{
 	color: #000;
 	padding: 0;
-	padding-bottom: 21px;
+	padding-bottom: 16px;
 	background: transparent!important;
 	position: relative;
 	    padding-right: 20px;
@@ -3380,6 +3387,10 @@ span.page-aside__submenu-item{
 	textarea{
 		border-bottom: 2px solid #e84245;
 	}
+}
+
+.product-img{
+	margin-top: -48px;
 }
 
 @import "components/popup";
