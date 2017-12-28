@@ -498,13 +498,137 @@ $(document).ready(function() {
 	if ($('.fs').length>0) {
 		$('.fs').styler();
 	}
+
+	//INPUT FOCUS
+	$('.submit__form').find('input,textarea').each(function() {
+
+		$(this).on('focus', function() {
+			$(this).parents('.input-wrap').addClass('act');
+		});
+
+		$(this).on('blur', function() {
+			if ($(this).val().length == 0) {
+				$(this).parents('.input-wrap').removeClass('act');
+			}
+		});
+
+		if ($(this).val() != '') $(this).parents('.input-wrap').addClass('act');
+	});
+
+
+	//POPUP-CLOSE
+	$('body').on('click', '.btn-change', function(e){
+	    e.preventDefault();
+	    $.magnificPopup.close();
+    });
+
+
+	if ($('.product__color-slider').length>0) {
+		$('.product__color-slider').slick({
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			dots: false,
+			centerMode: false,
+			focusOnSelect: true,
+			infinite:true,
+			arrows: true,
+			lazyLoad: 'ondemand',
+			responsive: [
+			    {
+			      breakpoint: 600,
+			      settings: {
+			        slidesToShow: 2,
+			        slidesToScroll: 1
+			      }
+			    },
+			    {
+			      breakpoint: 450,
+			      settings: {
+			        slidesToShow: 1,
+			        slidesToScroll: 1
+			      }
+			    },
+			]
+		});
+	};
+
+
+	if ($('#contacts-map').length>0) {
+
+		var map;
+
+		var markerData= [
+			{lat: 48.019573 , lng: 66.923684  , zoom: 10 , name: "Казахстан"},
+			{lat: 61.52401 , lng: 105.318756  , zoom: 10 , name: "Россия"},
+			// {lat: 53.709807 , lng: 27.953389  , zoom: 10 , name: "Беларусь"},
+		];
+
+		var LatLng = {lat: 53.709807, lng: 27.953389};
+		 
+		function initialize() {
+			 	map = new google.maps.Map(document.getElementById('contacts-map'), {
+					zoom: 10,
+					center: LatLng,
+					mapTypeControl: false,
+		            navigationControl: false,
+		            scrollwheel: false,
+		            streetViewControl: false,
+		            zoomControl: true,
+		            zoomControlOptions: {
+		                position: google.maps.ControlPosition.RIGHT_CENTER
+		            },
+
+				});
+				var 
+				marker = new google.maps.Marker({
+				    position: LatLng,
+				    map: map,
+				});
+
+				markerData.forEach(function(data) {
+					var newmarker= new google.maps.Marker({
+						map:map,
+						position:{lat:data.lat, lng:data.lng},
+						title: data.name
+					});
+					$("#selectlocation").append('<option value="'+[data.lat, data.lng,data.zoom].join('|')+'">'+data.name+'</option>');
+
+					setTimeout(function() {
+					  $('.map-select-styler').styler();
+					}, 100)
+					//$('.map-select-styler').styler();
+				});
+
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+
+		$(document).on('change','#selectlocation',function() {
+			var latlngzoom = jQuery(this).val().split('|');
+			var newzoom = 1*latlngzoom[2],
+			newlat = 1*latlngzoom[0],
+			newlng = 1*latlngzoom[1];
+			map.setZoom(newzoom);
+			map.setCenter({lat:newlat, lng:newlng});
+		});
+
+	};
+
+
+
+	//SUBMENU-MOBILE-TOGGLE
+	$('body').on('click', '.menu__top-link--submenu-mobile', function(e){
+	    e.preventDefault();
+	    $(this).toggleClass('active');
+	    $(this).next('.menu__second').slideToggle();
+    });
 });
 
 
 
 
 $(window).resize(function () {
-
+	// sliderStart()
 });
 
 // $(window).load(function(){
@@ -512,7 +636,22 @@ $(window).resize(function () {
 // });
 
 // functions
-
+// function sliderStart() {
+// 	var $soc_a = $('.soc-advertising__slider');
+// 	if($(window).width() < 750) {
+// 		$soc_a.not('.slick-initialized').slick({
+// 		  	infinite: true,
+// 		  	dots: false,
+// 		  	slidesToShow: 1,
+// 		  	slidesToScroll: 1,
+// 		  	adaptiveHeight: false,
+// 		});
+// 	} else{
+// 		if($soc_a.hasClass('slick-initialized')) {
+// 			$soc_a.slick("unslick");
+// 		}
+// 	}
+// }
 
 // links pages
 $('body').append(
@@ -531,6 +670,7 @@ $('body').append(
 		<li><a href="search.html">Поиск</a></li> \
 		<li><a href="catalog.html">Каталог</a></li> \
 		<li><a href="card.html">Карточка товара</a></li> \
+		<li><a href="contacts.html">Контакты</a></li> \
 		<li><a href="page404.html">404</a></li> \
 	</ol> \
 </div>');

@@ -95,7 +95,7 @@
 	}
 	.product__thumb {
 	    width: 100%;
-	    padding: 0 50px;
+	        padding: 0 65px;
 	}
 	.product-info{
 		left: 0;
@@ -225,6 +225,19 @@
 	}
 	.main-slider__item{
 		padding-bottom: 110px;
+	}
+	.popup-info {
+	    padding: 20px 0;
+	}
+	.popup-inline__info {
+	    width: 50%;
+	    padding: 0 20px;
+	}
+	.popup-inline__result {
+	    width: 50%;
+	}
+	.popup-info:before{
+		width: 50%;
 	}
 }
 
@@ -367,10 +380,13 @@
 	    border-top: 0;
 	}
 	.menu__item{
-		padding-bottom: 15px;
+		padding-bottom: 0;
 		border-top: 1px solid #c6dfd7;
 		&:last-child{
 			border-bottom: 1px solid #c6dfd7;
+		}
+		.menu__top-link{
+			padding-bottom: 15px;
 		}
 	}
 	.menu__socials {
@@ -402,6 +418,52 @@
 	    margin: 0 0 20px 0;
 	    text-align: center;
 	}
+	.popup-info-wrap{
+		display: block;
+	}
+	.popup-inline__info {
+	    width: 100%;
+	    padding: 0 20px;
+	}
+	.popup-inline__result {
+	    width: 100%;
+	    padding: 0 20px;
+
+	}
+	.popup-info:before{
+		display: none;
+	}
+	.popup-inline__title {	    
+		padding-bottom: 10px;
+	    margin-bottom: 10px;
+	}
+	.popup-inline-color {
+	    margin-bottom: 15px;
+	}
+	.menu__second{
+		position: relative;
+		border-top: 1px solid #c6dfd7;
+		padding: 10px 0;
+		&:before{
+			content: "";
+			display: inline-block;
+			width: 45px;
+			height: 3px;
+			background: #00714e;
+			position: absolute;
+			left: 0;
+			top: -2px;
+		}
+	}
+	.menu__second-link {
+	    display: block;
+	    margin-bottom: 0;
+	    padding: 10px 0;
+	}
+	.menu__wrap:after,
+	.search__wrap:after{
+		display: none;
+	}
 }
 
 @media screen and (max-width: 650px){
@@ -428,6 +490,9 @@
 				}
 			}
 		}
+	}
+	.popup .btn-change {
+	    padding: 10px 15px;
 	}
 }
 
@@ -522,6 +587,22 @@
 	    opacity: 1;
 	    transform: none;
 	    transition: none;
+	}
+	.product__item {
+	    height: 345px;
+	    padding: 0 0 35px 0;
+	}
+	.product__color-wrap {
+	    width: 100%;
+	}
+	.product__color-slider {
+	    padding: 0 60px;
+	}
+	.product__color-slider .slick-prev{
+		left: 0;
+	}
+	.product__color-slider .slick-next{
+		right: 0;
 	}
 }
 

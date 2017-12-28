@@ -209,18 +209,20 @@
 									<div class="product__color">
 										<h5>Цвет отделки</h5>
 										<div class="product__color-wrap">
-											<a href="#" class="product__color-item active" data-color="1">
-												<div class="product__color-img" style="background-image: url(img/content/color1.jpg)"></div>
-												<div class="product__color-title">Дуб неаполь</div>
-											</a>
-											<a href="#" class="product__color-item" data-color="2">
-												<div class="product__color-img" style="background-image: url(img/content/color2.jpg)"></div>
-												<div class="product__color-title">Выбеленный дуб</div>
-											</a>
-											<a href="#" class="product__color-item" data-color="3">
-												<div class="product__color-img" style="background-image: url(img/content/color3.jpg)"></div>
-												<div class="product__color-title">Капучино</div>
-											</a>
+											<div class="product__color-slider">
+												<a href="#" class="product__color-item active" data-color="1">
+													<div class="product__color-img" style="background-image: url(img/content/color1.jpg)"></div>
+													<div class="product__color-title">Дуб неаполь</div>
+												</a>
+												<a href="#" class="product__color-item" data-color="2">
+													<div class="product__color-img" style="background-image: url(img/content/color2.jpg)"></div>
+													<div class="product__color-title">Выбеленный дуб</div>
+												</a>
+												<a href="#" class="product__color-item" data-color="3">
+													<div class="product__color-img" style="background-image: url(img/content/color3.jpg)"></div>
+													<div class="product__color-title">Капучино</div>
+												</a>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -331,33 +333,51 @@
 
 
 		<div id="application" class="popup popup-info mfp-with-anim mfp-hide">
-			<div class="popup-inline__img">
-				ddd
-			</div>
-			<div class="popup-inline__info">
-				<div class="popup-inline__form">
-					<h3>Оставить заявку</h3>
-					<form action="#" method="POST">
-						<div class="input-wrap">
-							<div class="feedback-label">ФИО:</div>
-							<input type="text">
-						</div>
-						<div class="input-wrap input-wrap--error">
-							<div class="feedback-label">Электронная почта:</div>
-							<input type="email">
-						</div>
-						<div class="input-wrap">
-							<div class="feedback-label">Номер телефона:</div>
-							<input type="text">
-						</div>
-						<div class="input-wrap">
-							<div class="feedback-label">Дополнительный комментарий:</div>
-							<textarea></textarea>
-						</div>
-						<div class="input-wrap input-wrap--submit">
-							<input type="submit" class="btn" value="Оставить заявку">
-						</div>
-					</form>
+			<div class="popup-info-wrap">
+				<div class="popup-inline__result">
+					<div class="popup-inline__img">
+						<img src="img/content/p-door1.png" alt="">
+					</div>
+					<div class="popup-inline__title">
+						Горизонталь
+					</div>
+					<div class="popup-inline-variant">
+						<div class="popup-inline-color__title">Вариант исполнения двери:</div>
+						<span>Горизонталь-1</span>
+					</div>
+					<div class="popup-inline-color">
+						<div class="popup-inline-variant__title">Цвет:</div>
+						<span>Дуб Неаполь</span>
+					</div>
+					<a href="#" class="btn-change">Изменить параметры двери</a>
+				</div>
+				<div class="popup-inline__info">
+					<div class="submit__form">
+						<h3>Оставить заявку</h3>
+						<form action="#" method="POST">
+							<div class="input-wrap">
+								<div class="feedback-label">ФИО:</div>
+								<input type="text">
+							</div>
+							<div class="input-wrap input-wrap--error">
+								<div class="feedback-label">Электронная почта:</div>
+								<input type="email">
+								<div class="error-msg">Проверьте правильность ввода электронной почты</div>
+								<a href="#" class="error-close"></a>
+							</div>
+							<div class="input-wrap">
+								<div class="feedback-label">Номер телефона:</div>
+								<input type="text">
+							</div>
+							<div class="input-wrap">
+								<div class="feedback-label">Дополнительный комментарий:</div>
+								<textarea></textarea>
+							</div>
+							<div class="input-wrap input-wrap--submit">
+								<input type="submit" class="btn" value="Оставить заявку">
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
