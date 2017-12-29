@@ -20,9 +20,9 @@
 		height: 100%;
 	}
 	&.active{
-		.page-header__top {
-		    background: rgba(255,255,255,0.9);
-		}
+		// .page-header__top {
+		//     background: rgba(255,255,255,0.9);
+		// }
 		.top-logo {
 		    background: url(../img/content/logo-gr.png) no-repeat;
 		    //transition-delay: 0.3s;
@@ -824,7 +824,8 @@ a.breadcrumbs__item{
 
 
 .menu__top-link--submenu-mobile{
-	display: inline-block;
+	// display: inline-block;
+	display: none;
     width: 20px;
     height: 12px;
     background: url(../img/svg/d-arrow.svg) center no-repeat;

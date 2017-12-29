@@ -562,6 +562,35 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 	.slick-track{
 	    display: flex;
 	}
+	.slick-dots{
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		bottom: 20px;
+		width: 100%;
+		text-align: center;
+		li{
+			display: inline-block;
+			margin-right: -4px;
+			width: 25%;
+			padding-right: 15px;
+			&.slick-active{
+				button{
+					background: #fff;
+					height: 4px;
+				}
+			}
+		}
+		button{
+			display: block;
+			height: 2px;
+			background: rgba(255, 255, 255, 0.3);
+			border: 0;
+			width: 100%;
+			text-indent: -9999em;
+			height: 2px;
+		}
+	}
 }
 
 .main-slider__item{
