@@ -49,16 +49,10 @@
 					</div>
 					<div class="row page-title">
 						<div class="col-md-9 col-md-push-3 page-title__wrap">
-							<h1>Приглашаем вас посетить ярмарку BATIMAT RUSSIA 2016!</h1>
+							<h1>Контакты</h1>
 							<div class="breadcrumbs">
 								<a href="#" class="breadcrumbs__item">Главная</a>
-								<a href="#" class="breadcrumbs__item">Новости</a>
-								<span class="breadcrumbs__item">BATIMAT RUSSIA 2016: фотоотчёт</span>
-							</div>
-							<div class="news-date">
-								<div class="news-date-day">12</div>
-								<div class="news-date__month">февраля</div>
-								<div class="news-date__year">2017</div>
+								<span class="breadcrumbs__item">Контакты</span>
 							</div>
 						</div>
 					</div>
@@ -157,79 +151,38 @@
 				<div class="page-content workarea">
 					<div class="container-fluid">
 						<!-- CONTENT-PART -->
-						<div class="row">
-							<div class="col-md-3 page-aside">
-								<div class="page-aside__cat">
-									<a href="#" class="page-aside__link">Производство</a>
-								</div>
-								<div class="page-aside__cat page-aside__cat--submenu">
-									<span class="page-aside__link active">Каталог</span>
-									<div class="page-aside__submenu">
-										<a href="#" class="page-aside__submenu-item">Шпонированные двери</a>
-										<a href="#" class="page-aside__submenu-item">Двери Экошпон</a>
-										<span class="page-aside__submenu-item active">Накладки</span>
-										<a href="#" class="page-aside__submenu-item">Погонаж и метр</a>
+						<div class="contacts-select">
+							<select class="map-select-styler" id="selectlocation">
+								<option value="53.709807|27.953389|10">Беларусь</option>
+							</select>
+						</div>
+						<div class="contacts-map-wrap">
+							<div id="contacts-map"></div>
+						</div>
+						<div class="contacts-form-wrap">
+							<div class="submit__form">
+								<h3>Оставить заявку</h3>
+								<form action="#" method="POST">
+									<div class="input-wrap">
+										<div class="feedback-label">ФИО:</div>
+										<input type="text">
 									</div>
-								</div>
-								<div class="page-aside__cat">
-									<a href="#" class="page-aside__link">Партнерам</a>
-								</div>
-								<div class="page-aside__cat">
-									<a href="#" class="page-aside__link">Акции</a>
-								</div>
-								<div class="page-aside__cat">
-									<a href="#" class="page-aside__link">Контакты</a>
-								</div>
-							</div>
-							<div class="col-md-9 page-info">
-								<div class="news-in">
-									<p>
-										В настоящий момент в Москве проходит выставка BATIMAT RUSSIA 2016 в МВЦ «Крокус Экспо»: Московская область, Красногорский район, г. Красногорск, ул. Международная, д. 16. Компания «Исток» единственная из белорусских производителей, которая участвует в этом году на данном мероприятии.
-									</p>
-									<div class="slider-default-wrap">
-										<div class="slider-default">
-											<div class="slider-default__item">
-												<div class="slider-default__img" style="background-image: url(img/content/img1.jpg);">
-												</div>
-												<div class="slider-default__info">
-													Здание «Крокус Экспо»
-												</div>
-											</div>
-											<div class="slider-default__item">
-												<div class="slider-default__img" style="background-image: url(img/content/img1.jpg);">
-												</div>
-												<div class="slider-default__info">
-													Test info slide 2
-												</div>
-											</div>
-											<div class="slider-default__item">
-												<div class="slider-default__img" style="background-image: url(img/content/img1.jpg);">
-												</div>
-												<div class="slider-default__info">
-													Test info slide 3
-												</div>
-											</div>
-											<div class="slider-default__item">
-												<div class="slider-default__img" style="background-image: url(img/content/img1.jpg);">
-												</div>
-												<div class="slider-default__info">
-													Test info slide 4
-												</div>
-											</div>
-										</div>
-										<div class="slide-count-wrap">
-											<div class="slide-count-wrap__inner">
-										        <span class="current"></span>
-										        <span class="separat"><span class="separat-inner">/</span></span>
-										        <span class="total"></span>
-									        </div>
-									    </div>
+									<div class="input-wrap">
+										<div class="feedback-label">Электронная почта:</div>
+										<input type="email">
 									</div>
-									<p>
-										В ходе выставки представлены новинки, выпущенные в этом году в серии "Классика": модель "Венеция-1", "Венеция-2" (первая модель, представленная 
-										в новом цвете "эмаль золото"), "Сити-1","Сити-2","Сити-3","Сити-4" (цвета светлый орех, орех, прозрачный лак и новый цвет "седой дуб"). В серии Техно" представлена новая модель "Стиль-1", "Стиль-2", "Стиль-3","Стиль-4".
-									</p>
-								</div>
+									<div class="input-wrap">
+										<div class="feedback-label">Номер телефона:</div>
+										<input type="text">
+									</div>
+									<div class="input-wrap">
+										<div class="feedback-label">Дополнительный комментарий:</div>
+										<textarea></textarea>
+									</div>
+									<div class="input-wrap input-wrap--submit">
+										<input type="submit" class="btn" value="Оставить заявку">
+									</div>
+								</form>
 							</div>
 						</div>
 						<!--end CONTENT-PART -->
@@ -280,6 +233,7 @@
 			</footer>
 		</div><!-- END LAYOUT-->
 
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAezw_ZyiVIRm_QbuBFf6x29K12Sdb1YUk"></script>
 		<script src="js/libs.min.js"></script>
 		<script src="js/interface.js"></script>
 	</body>
