@@ -135,8 +135,25 @@ $(document).ready(function() {
 					"accessibility": false,
 					nextArrow: $('.main-slider__right'),
 		  			prevArrow: $('.main-slider__left'),
+		  			dots:false,
+		  			arrows:true,
+		  			adaptiveHeight: true
+			      }
+			    },
+			    {
+			      breakpoint: 768,
+			      settings: {
+			        infinite: false,
+					slidesToShow: 1,
+					fade: true,
+					lazyLoad: 'progressive',
+					useTransform:true,
+					"accessibility": false,
+					nextArrow: $('.main-slider__right'),
+		  			prevArrow: $('.main-slider__left'),
 		  			dots:true,
 		  			arrows:true,
+		  			adaptiveHeight: true
 			      }
 			    },
 		    ]
@@ -258,9 +275,9 @@ $(document).ready(function() {
 			    {
 			      breakpoint: 550,
 			      settings: {
-			      	centerMode:true,
+			      	centerMode:false,
 			        slidesToShow: 1,
-			        slidesToScroll: 1
+			        slidesToScroll: 1,
 			      }
 			    }
 			]
@@ -451,6 +468,12 @@ $(document).ready(function() {
 	    $(this).addClass('active');
 	    var tColor = $(this).data('color');
 	    console.log(tColor); 
+	});
+	//VARIANT-SELECT
+	$('body').on('click', '.product__thumb-item', function(e){
+	    e.preventDefault();
+	    var tVariant = $(this).data('variant');
+	    console.log(tVariant); 
 	});
 
 

@@ -1014,16 +1014,19 @@ a[href^="https://maps.google.com/maps"]{display:none !important}
 }
 
 .link-more{
-	text-decoration: none;
-	display: inline-block;
-	margin-left: 30px;
-	color: #3975b7;
-	font-size: 14px;
-	font-family: "Open Sans", sans-serif;
-	//background: none!important;
-	line-height: 18px;
-	&:hover{
-		color: #fff!important;
+		display: inline-block;
+	a{
+		text-decoration: none;
+		display: inline-block;
+		margin-left: 30px;
+		color: #3975b7;
+		font-size: 14px;
+		font-family: "Open Sans", sans-serif;
+		//background: none!important;
+		line-height: 18px;
+		&:hover{
+			color: #fff!important;
+		}
 	}
 }
 .new__info{
@@ -2634,6 +2637,7 @@ span.page-aside__submenu-item{
     vertical-align: top;
     margin-right: -4px;
     height: 205px;
+    background: transparent!important;
     &:after{
 		content: "";
 		display: block;
@@ -2889,6 +2893,7 @@ span.page-aside__submenu-item{
 
 .construction__slider-item{
 	padding-top: 60px;
+	padding-bottom: 85px;
 	min-height: 620px;
 }
 
@@ -3480,7 +3485,8 @@ span.page-aside__submenu-item{
 
 .contacts-form-wrap{
 	.submit__form{
-		max-width: 100%;
+		max-width: 50%;
+		margin: 0;
 	}
 }
 
