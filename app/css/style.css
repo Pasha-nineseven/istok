@@ -3102,10 +3102,21 @@ a.breadcrumbs__item {
   margin-right: -4px; }
 
 .default-gallery__item {
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  width: 25%;
+  padding-right: 20px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: -4px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
+  .default-gallery__item img {
+    max-width: 100%;
+    height: auto; }
 
 .workarea a.default-gallery__link {
-  display: block;
+  display: inline-block;
   background: transparent;
   padding: 0;
   position: relative;
@@ -3406,12 +3417,14 @@ span.page-aside__submenu-item:hover {
     font-size: 28px;
     font-family: "Open Sans", sans-serif; }
 
-.search-result {
+.search-result .container-fluid {
+  max-width: 878px; }
+
+.search-result__msg {
   padding-top: 35px;
   font-size: 14px;
-  color: #a1a1a1; }
-  .search-result .container-fluid {
-    max-width: 878px; }
+  color: #a1a1a1;
+  margin-bottom: 20px; }
 
 .search-form__submit {
   position: absolute;
@@ -4178,7 +4191,11 @@ span.page-aside__submenu-item:hover {
   display: flex;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
+          flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 .workarea .construction__pager-item {
   width: 25%;
@@ -4566,7 +4583,12 @@ span.page-aside__submenu-item:hover {
   position: relative;
   margin-bottom: 30px; }
 
-#contacts-map {
+#contacts-map-single {
+  width: 100%;
+  height: 100%;
+  position: absolute; }
+
+#contacts-map-multiple {
   width: 100%;
   height: 100%;
   position: absolute; }
@@ -4689,6 +4711,140 @@ span.page-aside__submenu-item:hover {
 .workarea .filter--mobile .filter__submit {
   display: inline-block;
   margin-top: 10px; }
+
+.map-links {
+  margin-bottom: 30px; }
+  .map-links:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.map-links__item {
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  padding: 5px 15px !important;
+  color: #000 !important; }
+  .map-links__item:hover {
+    background: #00714e !important;
+    color: #fff !important; }
+  .map-links__item.active {
+    background: #00714e;
+    color: #fff !important; }
+
+.contacts-address {
+  margin-bottom: 30px; }
+
+.map-links__subscribe {
+  float: right;
+  margin-top: 4px; }
+
+.map-links__wrap {
+  overflow: hidden;
+  float: left; }
+
+.contacts-persons {
+  margin-bottom: 30px; }
+
+.contacts-persons__item {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .contacts-persons__item:last-child {
+    margin-bottom: 0; }
+
+.contacts-persons__photo {
+  width: 140px;
+  height: 140px;
+  line-height: 140px;
+  padding-right: 20px; }
+  .contacts-persons__photo img {
+    display: inline-block;
+    vertical-align: middle; }
+
+.contacts-persons__info {
+  font-size: 14px; }
+
+.shop {
+  margin-bottom: 30px; }
+
+.shop__item:last-child .shop__item-in {
+  margin-bottom: 0; }
+
+.object_lat,
+.object_long {
+  display: none; }
+
+.shop__item-in {
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 0 -10px 20px;
+  min-width: 50%; }
+  .shop__item-in.active {
+    background: #d9eae5; }
+
+.workarea a.search__item {
+  border-bottom: 1px solid #c6dfd7;
+  display: block;
+  text-decoration: none;
+  color: #000;
+  background-color: #fff;
+  padding: 20px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  margin: 0 -20px 20px;
+  position: relative; }
+  .workarea a.search__item:hover {
+    -webkit-box-shadow: 0px 1px 12px 0px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 1px 12px 0px rgba(0, 0, 0, 0.25); }
+
+.search__date-wrap {
+  margin-bottom: 24px; }
+
+.search__date {
+  background: #3975b7;
+  color: #fff;
+  padding: 4px 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  display: inline-block; }
+
+.search__title {
+  font-size: 21px;
+  font-family: 'Rubik', sans-serif;
+  margin-bottom: 27px;
+  line-height: 1.3; }
+
+.search__info {
+  font-size: 14px;
+  line-height: 1.75; }
+
+.search__wrapper:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.search__txt {
+  overflow: hidden; }
+
+.search__img {
+  float: left;
+  width: 120px;
+  height: 120px;
+  padding-right: 30px; }
+  .search__img img {
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    display: block; }
 
 .popup {
   margin: 0 auto;
@@ -5783,7 +5939,19 @@ button.mfp-arrow {
   .construction__item--img {
     right: -13px; }
   .construction__item--info {
-    padding-top: 70px; } }
+    padding-top: 70px; }
+  .contacts-form-wrap .submit__form {
+    max-width: 100%; }
+  .default-gallery__item {
+    width: 33.33%; }
+  .map-links__subscribe {
+    float: none;
+    margin-top: 4px;
+    font-size: 14px; }
+  .map-links__wrap {
+    float: none;
+    margin-bottom: 20px;
+    font-size: 14px; } }
 
 @media screen and (max-width: 700px) {
   .main-video-wrap {
@@ -5833,7 +6001,12 @@ button.mfp-arrow {
   .new__slider .slick-prev {
     display: none !important; }
   .new__slider .slick-list {
-    padding-top: 30px !important; } }
+    padding-top: 30px !important; }
+  .news__more {
+    opacity: 1; }
+  .workarea a.news__item:hover {
+    -webkit-box-shadow: 0px 1px 12px 0px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 1px 12px 0px rgba(0, 0, 0, 0.25); } }
 
 @media screen and (max-width: 600px) {
   .page-footer__logo {
@@ -5954,7 +6127,15 @@ button.mfp-arrow {
   .main-video-wrap {
     height: 240px; }
   .main-video__info {
-    padding-bottom: 390px; } }
+    padding-bottom: 390px; }
+  .default-gallery__item {
+    width: 50%; }
+  .contacts-persons__info h6 {
+    font-size: 14px; }
+  .search__img {
+    float: none;
+    padding-right: 0;
+    margin-bottom: 20px; } }
 
 @media screen and (max-width: 450px) {
   .catalog__item {

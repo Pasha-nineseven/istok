@@ -18,19 +18,19 @@
 	</head>
 	<body>
 		<!--LAYOUT-->
-		<div class="layout layout--search">
-			<header class="page-header">
+		<div class="layout">
+			<header class="page-header" style="background-image: url(img/content/head-bg.jpg);">
 				<div class="container-fluid">
 					<div class="page-header__top">
 						<a href="#" class="top-logo"></a>
 						<div class="page-header__links">
 							<a href="#" class="top-menu"><span class="burger-icon"></span></a>
-					<!-- 		<a href="#" class="top-search active" onclick="javascript:document.location.href='http://nineseven.ru'">
+							<a href="#" class="top-search">
 								<div class="search-inner">
 									<div class="search-icon">
 									</div>
 								</div>
-							</a> -->
+							</a>
 							<div class="top-language">
 								<a href="#" class="top-language__link">Ru</a>
 								<div class="top-language__list">
@@ -49,10 +49,10 @@
 					</div>
 					<div class="row page-title">
 						<div class="col-md-9 col-md-push-3 page-title__wrap">
-							<h1>Новости компании</h1>
+							<h1>Контакты</h1>
 							<div class="breadcrumbs">
 								<a href="#" class="breadcrumbs__item">Главная</a>
-								<span class="breadcrumbs__item">Новости компании</span>
+								<span class="breadcrumbs__item">Контакты</span>
 							</div>
 						</div>
 					</div>
@@ -151,75 +151,94 @@
 				<div class="page-content workarea">
 					<div class="container-fluid">
 						<!-- CONTENT-PART -->
-						<div class="search">
-							<div class="container-fluid">
-								<div class="search-form">
-									<form action="#" method="post">
-										<input type="text" placeholder="Что вы хотите найти?" class="search-form__input">
-										<input type="submit" class="search-form__submit">
-									</form>
+						<div class="map-links">
+							<div class="map-links__wrap">
+								<a href="#" class="map-links__item">Оптовые продажи</a>
+								<span class="map-links__item active">Где купить?</span>
+							</div>
+							<a href="#submit__form" class="map-links__subscribe scroll-link">Написать нам</a>
+						</div>
+						<div class="contacts-map-wrap">
+							<div id="contacts-map-multiple"></div>
+						</div>
+						<div class="shop">
+							<div class="shop__item active" data-label="0">
+								<div class="shop__item-in">
+									<div class="object_lat">53.876794</div>
+									<div class="object_long">27.5167049</div>
+									<h6>Фабрика дверей "Исток Дорс"</h6>
+									220034, Республика Беларусь,<br>
+									г. Минск, ул.Краснозвездная,18б (6-й этаж)<br>
+									тел.: 8-10-375 (17) 290-01-51<br>
+									т/факс: 8-10-375 (17) 290-01-52
+								</div>
+							</div>
+							<div class="shop__item" data-label="1">
+								<div class="shop__item-in">
+									<div class="object_lat">55.755826</div>
+									<div class="object_long">37.6172999</div>
+									Офис компании в г. Москва<br>
+									г. Москва, Рязанский проспект, 10 оф.33<br>
+									+79260213035
+								</div>
+							</div>
+							<div class="shop__item" data-label="2">
+								<div class="shop__item-in">
+									<div class="object_lat">60.0762383</div>
+									<div class="object_long">30.121383</div>
+									<h6>"Двери оптом"</h6>
+									Санкт-Петербург, 194292<br>
+									1-й Верхний пер., 12, литера Б<br>
+									Тел.: +7 (495) 921-45-59
+								</div>
+							</div>
+							<div class="shop__item" data-label="3">
+								<div class="shop__item-in">
+									<div class="object_lat">51.1605227</div>
+									<div class="object_long">71.4703558</div>
+									<h6>"Народные двери"</h6>
+									г.Астана, р-н Сарыарка, ул.Алматинская, 41/1 (рынок "Эталон")<br>
+									+7 (702) 460-59-36
+								</div>
+							</div>
+							<div class="shop__item" data-label="4">
+								<div class="shop__item-in">
+									<div class="object_lat">40.4092617</div>
+									<div class="object_long">49.8670924</div>
+									<h6>Магазин DOORSAZ</h6>
+									г. Баку: м-ро. Хатаи<br>
+									ул. С.Везирова<br>
+									+994124800694<br>
+									+994703005599<br>
+									+994708331180<br>
+									+994518331180
 								</div>
 							</div>
 						</div>
-						<div class="search-result">
-							<div class="container-fluid">
-								<div class="search-result__msg">
-									Всего результатов &#8212; <span>138</span>
-								</div>
-								<a href="#" class="search__item">
-									<div class="search__date-wrap">
-										<div class="search__date">
-											08 января 2016
-										</div>
+						<div class="contacts-form-wrap">
+							<div class="submit__form" id="submit__form">
+								<h3>Оставить заявку</h3>
+								<form action="#" method="POST">
+									<div class="input-wrap">
+										<div class="feedback-label">ФИО:</div>
+										<input type="text">
 									</div>
-									<div class="search__wrapper">
-										<div class="search__img">
-											<img src="img/content/gallery3.jpg" alt="">
-										</div>
-										<div class="search__txt">
-											<div class="search__title">
-												Новый цвет в серии «Техно»
-											</div>
-											<div class="search__info">
-												В серии "Техно" добавлена новая пленка: венге мелинга( рифленая структура)...
-											</div>
-										</div>
+									<div class="input-wrap">
+										<div class="feedback-label">Электронная почта:</div>
+										<input type="email">
 									</div>
-								</a>
-								<a href="#" class="search__item">
-									<div class="search__date-wrap">
-										<div class="search__date">
-											13 января 2016
-										</div>
+									<div class="input-wrap">
+										<div class="feedback-label">Номер телефона:</div>
+										<input type="text">
 									</div>
-									<div class="search__wrapper">
-										<div class="search__txt">
-											<div class="search__title">
-												Производство накладок для входных дверей
-											</div>
-											<div class="search__info">
-												Мы рады сообщить Вам, что компания Исток начала производство накладок для входных дверей. В настоящее время мы можем производить накладки аналогичные модельному ряду дверей...
-											</div>
-										</div>
+									<div class="input-wrap">
+										<div class="feedback-label">Дополнительный комментарий:</div>
+										<textarea></textarea>
 									</div>
-								</a>
-								<a href="#" class="search__item">
-									<div class="search__date-wrap">
-										<div class="search__date">
-											30 января 2016
-										</div>
+									<div class="input-wrap input-wrap--submit">
+										<input type="submit" class="btn" value="Оставить заявку">
 									</div>
-									<div class="search__wrapper">
-										<div class="search__txt">
-											<div class="search__title">
-												Модели «Арт», «Престиж» в новой тонировке «патина орех»
-											</div>
-											<div class="search__info">
-												В серии "Техно" добавлена новая пленка: венге мелинга( рифленая структура)...
-											</div>
-										</div>
-									</div>
-								</a>
+								</form>
 							</div>
 						</div>
 						<!--end CONTENT-PART -->
@@ -270,6 +289,7 @@
 			</footer>
 		</div><!-- END LAYOUT-->
 
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAezw_ZyiVIRm_QbuBFf6x29K12Sdb1YUk"></script>
 		<script src="js/libs.min.js"></script>
 		<script src="js/interface.js"></script>
 	</body>
