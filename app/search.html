@@ -42,7 +42,7 @@
 							<a href="tel:+375172900151" class="top-phone">+375 17 290 01 51</a>
 						</div>
 						<div class="page-header__buttons">
-							<a href="#" class="btn dealer-link">Стать дилером</a>
+							<a href="#application-single" class="btn dealer-link popup-inline" data-effect="mfp-zoom-in">Стать дилером</a>
 							<a href="#" class="retail-link">Розничные магазины</a>
 							<a href="#" class="wholesale-link">Оптовые продажи</a>
 						</div>
@@ -239,7 +239,7 @@
 							</div>
 						</div>
 						<div class="page-footer__buttons">
-							<a href="#" class="page-footer__btn">Стать дилером</a>
+							<a href="#application-single" class="page-footer__btn popup-inline" data-effect="mfp-zoom-in">Стать дилером</a>
 							<div class="socials socials--mobile">
 								<a href="#" class="socials__item socials__item--vk"></a>
 								<a href="#" class="socials__item socials__item--fb"></a>
@@ -269,6 +269,35 @@
 				</div>
 			</footer>
 		</div><!-- END LAYOUT-->
+
+		<div id="application-single" class="popup popup-application mfp-with-anim mfp-hide">
+			<div class="submit__form">
+				<h3>Оставить заявку</h3>
+				<form action="#" method="POST">
+					<div class="input-wrap">
+						<div class="feedback-label">ФИО:</div>
+						<input type="text">
+					</div>
+					<div class="input-wrap input-wrap--error">
+						<div class="feedback-label">Электронная почта:</div>
+						<input type="email">
+						<div class="error-msg">Проверьте правильность ввода электронной почты</div>
+						<a href="#" class="error-close"></a>
+					</div>
+					<div class="input-wrap">
+						<div class="feedback-label">Номер телефона:</div>
+						<input type="text">
+					</div>
+					<div class="input-wrap">
+						<div class="feedback-label">Дополнительный комментарий:</div>
+						<textarea></textarea>
+					</div>
+					<div class="input-wrap input-wrap--submit">
+						<input type="submit" class="btn" value="Оставить заявку">
+					</div>
+				</form>
+			</div>
+		</div>
 
 		<script src="js/libs.min.js"></script>
 		<script src="js/interface.js"></script>

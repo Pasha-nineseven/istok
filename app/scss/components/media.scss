@@ -411,6 +411,18 @@
 	    margin-top: -42px;
 	    margin-left: -42px;
 	}
+	.main-benefits__list .slick-prev {
+	    left: 0;
+	}
+	.main-benefits__list .slick-next {
+	    right: 0;
+	}
+	.main-benefits__list {
+	    padding: 30px 65px 0;
+	}
+	.workarea a.main-news__item {
+	    min-height: auto;
+	}
 }
 
 @media screen and (max-width: 800px){
@@ -424,6 +436,9 @@
 	}
 	.workarea tr:first-child td {
 	    border-top: 0;
+	}
+	.construction:before {
+	    width: 100%;
 	}
 }
 
@@ -835,7 +850,15 @@
 	.main-benefits__item {
 	    width: 100%;
 	}
-
+	.popup-application .submit__form {
+	    padding: 0 30px;
+	}
+	.popup-application {
+	    padding: 30px 0;
+	}
+	.main-benefits__info {
+	    font-size: 14px;
+	}
 }
 
 

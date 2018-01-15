@@ -135,8 +135,25 @@ $(document).ready(function() {
 					"accessibility": false,
 					nextArrow: $('.main-slider__right'),
 		  			prevArrow: $('.main-slider__left'),
+		  			dots:false,
+		  			arrows:true,
+		  			adaptiveHeight: true
+			      }
+			    },
+			    {
+			      breakpoint: 768,
+			      settings: {
+			        infinite: false,
+					slidesToShow: 1,
+					fade: true,
+					lazyLoad: 'progressive',
+					useTransform:true,
+					"accessibility": false,
+					nextArrow: $('.main-slider__right'),
+		  			prevArrow: $('.main-slider__left'),
 		  			dots:true,
 		  			arrows:true,
+		  			adaptiveHeight: true
 			      }
 			    },
 		    ]
@@ -258,9 +275,9 @@ $(document).ready(function() {
 			    {
 			      breakpoint: 550,
 			      settings: {
-			      	centerMode:true,
+			      	centerMode:false,
 			        slidesToShow: 1,
-			        slidesToScroll: 1
+			        slidesToScroll: 1,
 			      }
 			    }
 			]
@@ -452,6 +469,12 @@ $(document).ready(function() {
 	    var tColor = $(this).data('color');
 	    console.log(tColor); 
 	});
+	//VARIANT-SELECT
+	$('body').on('click', '.product__thumb-item', function(e){
+	    e.preventDefault();
+	    var tVariant = $(this).data('variant');
+	    console.log(tVariant); 
+	});
 
 
 	$('.popup-inline').magnificPopup({
@@ -578,75 +601,26 @@ $(document).ready(function() {
 	};
 
 
-	if ($('#contacts-map').length>0) {
-
-		var map;
-
-		var markerData= [
-			{lat: 48.019573 , lng: 66.923684  , zoom: 10 , name: "Казахстан"},
-			{lat: 61.52401 , lng: 105.318756  , zoom: 10 , name: "Россия"},
-			// {lat: 53.709807 , lng: 27.953389  , zoom: 10 , name: "Беларусь"},
-		];
-
-		var LatLng = {lat: 53.709807, lng: 27.953389};
-		 
-		function initialize() {
-			 	map = new google.maps.Map(document.getElementById('contacts-map'), {
-					zoom: 10,
-					center: LatLng,
-					mapTypeControl: false,
-		            navigationControl: false,
-		            scrollwheel: false,
-		            streetViewControl: false,
-		            zoomControl: true,
-		            zoomControlOptions: {
-		                position: google.maps.ControlPosition.RIGHT_CENTER
-		            },
-
-				});
-				var 
-				marker = new google.maps.Marker({
-				    position: LatLng,
-				    map: map,
-				});
-
-				markerData.forEach(function(data) {
-					var newmarker= new google.maps.Marker({
-						map:map,
-						position:{lat:data.lat, lng:data.lng},
-						title: data.name
-					});
-					$("#selectlocation").append('<option value="'+[data.lat, data.lng,data.zoom].join('|')+'">'+data.name+'</option>');
-
-					setTimeout(function() {
-					  $('.map-select-styler').styler();
-					}, 100)
-					//$('.map-select-styler').styler();
-				});
-
-		}
-
-		google.maps.event.addDomListener(window, 'load', initialize);
-
-		$(document).on('change','#selectlocation',function() {
-			var latlngzoom = jQuery(this).val().split('|');
-			var newzoom = 1*latlngzoom[2],
-			newlat = 1*latlngzoom[0],
-			newlng = 1*latlngzoom[1];
-			map.setZoom(newzoom);
-			map.setCenter({lat:newlat, lng:newlng});
-		});
-
-	};
-
-
-
 	//SUBMENU-MOBILE-TOGGLE
 	$('body').on('click', '.menu__top-link--submenu-mobile', function(e){
 	    e.preventDefault();
 	    $(this).toggleClass('active');
 	    $(this).next('.menu__second').slideToggle();
     });
+
+    $('body').on('click', '.scroll-link', function (event) {
+	    event.preventDefault();
+
+	    $('html, body').animate({
+	        scrollTop: $($.attr(this, 'href')).offset().top
+	    }, 500);
+	});
+
+
+    //SINGLE-MAP
+	initialize_single();
+
+	initialize_multiple();
 });
 
 
@@ -661,22 +635,121 @@ $(window).resize(function () {
 // });
 
 // functions
-// function sliderStart() {
-// 	var $soc_a = $('.soc-advertising__slider');
-// 	if($(window).width() < 750) {
-// 		$soc_a.not('.slick-initialized').slick({
-// 		  	infinite: true,
-// 		  	dots: false,
-// 		  	slidesToShow: 1,
-// 		  	slidesToScroll: 1,
-// 		  	adaptiveHeight: false,
-// 		});
-// 	} else{
-// 		if($soc_a.hasClass('slick-initialized')) {
-// 			$soc_a.slick("unslick");
-// 		}
-// 	}
-// }
+function initialize_single() {
+	if ($('#contacts-map-single').length>0) {
+		var icon = "img/content/label.png";
+
+		var LatLng = {lat: 53.709807, lng: 27.953389};
+
+	 	map = new google.maps.Map(document.getElementById('contacts-map-single'), {
+			zoom: 8,
+			center: LatLng,
+			mapTypeControl: false,
+            navigationControl: false,
+            scrollwheel: false,
+            streetViewControl: false,
+            zoomControl: true,
+            zoomControlOptions: {
+                position: google.maps.ControlPosition.RIGHT_CENTER
+            },
+
+		});
+		var 
+		marker = new google.maps.Marker({
+		    position: LatLng,
+		    map: map,
+		    icon:icon,
+		});
+
+		google.maps.event.addDomListener(window, "resize", function() {
+    		var center = map.getCenter();
+	    	google.maps.event.trigger(map, "resize");
+	    	map.setCenter(center);
+	    });
+		
+    };
+}
+
+function initialize_multiple() {
+	if ($('#contacts-map-multiple').length>0) {
+		var icon = "img/content/label-m.png";
+
+		bounds = new google.maps.LatLngBounds(), markers=[], alternateMarkers=[], markersIcon=[];
+		var mapOptions = {
+		    zoom: 0,
+		    zoomControl: true,
+		    mapTypeControl: false,
+	        navigationControl: false,
+	        scrollwheel: true,
+	        pancontrol:false,
+	        scaleControl: false,
+	        streetViewControl: false,
+	        disableDefaultUI:true,
+		};
+
+		map = new google.maps.Map(document.getElementById("contacts-map-multiple"), mapOptions);
+		map.fitBounds(bounds);
+
+		$(".shop__item").each(function(index, element) {
+		    var markerLatLng = new google.maps.LatLng($(this).find(".object_lat").text(), $(this).find(".object_long").text());
+
+		    var markImg=new google.maps.MarkerImage('img/content/label-m.png');
+		    var altMarkImg=new google.maps.MarkerImage('img/content/label.png');
+
+	        var id=$(element).data('label');
+
+		    var marker = new google.maps.Marker({
+	    	    position: markerLatLng,
+	    	    map: map,
+	    	    icon: markImg,
+	            customInfo: id,
+		    });
+		    
+		    markers.push(marker);
+		    markersIcon.push(markImg);
+		    alternateMarkers.push(altMarkImg);
+
+		    bounds.extend(markerLatLng);
+
+	        google.maps.event.addListener(marker, "click", function (e) {
+	        	for (var i = 0; i < markers.length; i++) {
+					markers[i].setIcon(markersIcon[i]);
+				};
+	            var curMarker = this;
+	            curMarker.setIcon(alternateMarkers[id]);
+	            var currentId = this.customInfo;
+	            //console.log(currentId);
+	            $(".shop__item").find('.shop__item-in').removeClass('active');
+	            $(".shop__item").each(function(index, element) {
+	                var idOver = $(element).data('label');
+
+	                if (idOver === currentId){
+	                    $(this).find('.shop__item-in').addClass('active');
+	                }
+	            });
+	        }); 
+		});
+
+
+		$(".shop__item").on('click', function(e){
+			e.preventDefault();
+
+			var markImg=new google.maps.MarkerImage('img/content/label-m.png');
+		    var altMarkImg=new google.maps.MarkerImage('img/content/label-m.png');
+
+			$('.shop__item').find('.shop__item-in').removeClass('active');
+			$(this).find('.shop__item-in').addClass('active');
+			var id_alt=$(this).data('label');
+	
+			for (var i = 0; i < markers.length; i++) {
+				markers[i].setIcon(markersIcon[i]);
+			};
+			markers[id_alt].setIcon(alternateMarkers[id_alt]);
+
+			map.panTo(markers[id_alt].position);
+		});
+    };
+}
 
 // links pages
 $('body').append(
@@ -696,6 +769,7 @@ $('body').append(
 		<li><a href="catalog.html">Каталог</a></li> \
 		<li><a href="card.html">Карточка товара</a></li> \
 		<li><a href="contacts.html">Контакты</a></li> \
+		<li><a href="contacts2.html">Контакты2</a></li> \
 		<li><a href="page404.html">404</a></li> \
 	</ol> \
 </div>');
