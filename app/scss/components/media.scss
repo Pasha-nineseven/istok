@@ -859,6 +859,53 @@
 	.main-benefits__info {
 	    font-size: 14px;
 	}
+	.copyright {
+	    position: static;
+	    margin-bottom: 10px;
+	}
+	.page-footer__webcom {
+	    position: static;
+	}
+	.page-footer {
+	    padding: 25px 0 35px;
+	}
+	.construction__item--info{
+		display: none;
+	}
+	.construction__item--img {
+	    right: auto;
+	    left: 50%;
+	    margin-left: -120px;
+	    width: 240px;
+	    float: none;
+	    position: relative;
+	}
+	.construction__pager-wrap{
+		display: none;
+	}
+	.construction__slider {
+	    margin: 0;
+	}
+	.construction {
+	    padding-top: 30px;
+	    padding-bottom: 30px;
+	}
+	.construction__slider .slick-track {
+	    padding-top: 0;
+	}
+	.construction__item--links {
+	    float: none;
+	    width: 100%;
+	    margin-top: 0;
+	}
+	.construction__top {
+	    position: static;
+	}
+	.construction__slider-item {
+	    padding-top: 0;
+	    padding-bottom: 0;
+	    min-height: inherit;
+	}
 }
 
 
@@ -893,6 +940,9 @@
 	    float: none;
 	    padding-right: 0;
 	    margin-bottom: 20px;
+	}
+	.main-partners__item {
+	    box-shadow: 0px 1px 15px 0px rgba(50, 50, 50, 0.1);
 	}
 }
 

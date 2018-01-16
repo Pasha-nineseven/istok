@@ -151,7 +151,7 @@ $(document).ready(function() {
 					"accessibility": false,
 					nextArrow: $('.main-slider__right'),
 		  			prevArrow: $('.main-slider__left'),
-		  			dots:true,
+		  			dots:false,
 		  			arrows:true,
 		  			adaptiveHeight: true
 			      }
@@ -230,6 +230,8 @@ $(document).ready(function() {
 			      breakpoint: 850,
 			      settings: {
 			        slidesToShow: 1,
+			        adaptiveHeight: true,
+			        infinite:false,
 			        slidesToScroll: 1
 			      }
 			    },
@@ -281,6 +283,46 @@ $(document).ready(function() {
 			      }
 			    }
 			]
+		});
+	}
+
+	//MAIN BENEFITS SLIDER
+	if ($('.main-benefits__list').length>0) {
+		$('.main-benefits__list').slick({
+			infinite: false,
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			lazyLoad: 'progressive',
+			
+			useTransform:true,
+			equalizeHeight: false,
+			accessibility: false,
+  			responsive: [
+			    {
+			      breakpoint: 850,
+			      settings: {
+			        slidesToShow: 3,
+			        slidesToScroll: 1,
+
+			      }
+			    },
+			    {
+			      breakpoint: 750,
+			      settings: {
+			        slidesToShow: 2,
+			        slidesToScroll: 1,
+			       
+			      }
+			    },
+			    {
+			      breakpoint: 500,
+			      settings: {
+			        slidesToShow: 1,
+			        slidesToScroll: 1,
+			       
+			      }
+			    },
+		    ]
 		});
 	}
 

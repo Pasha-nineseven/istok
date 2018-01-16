@@ -156,6 +156,20 @@ $(document).ready(function() {
 		  			adaptiveHeight: true
 			      }
 			    },
+			    {
+			      breakpoint: 600,
+			      settings: {
+			        infinite: false,
+					slidesToShow: 1,
+					fade: true,
+					lazyLoad: 'progressive',
+					useTransform:true,
+					"accessibility": false,
+		  			dots:true,
+		  			arrows:true,
+		  			adaptiveHeight: true
+			      }
+			    },
 		    ]
 		});
 
@@ -407,6 +421,27 @@ $(document).ready(function() {
 		type: 'image',
 		gallery:{
 		    enabled:true
+		},
+		removalDelay: 500,
+		closeBtnInside: true,
+		fixedContentPos: false,
+		callbacks: {
+			open: function(){
+				$('body').addClass('noscroll');
+		    },
+		    close: function() {
+                 $('body').removeClass('noscroll');
+            }
+		},
+
+		//midClick: true,
+	});
+
+	//POPUP-SINGLE
+	$('.default-gallery__link-single').magnificPopup({
+		type: 'image',
+		gallery:{
+		    enabled:false
 		},
 		removalDelay: 500,
 		closeBtnInside: true,
