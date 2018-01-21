@@ -349,21 +349,36 @@ $(document).ready(function() {
 
 	//POPUP-INLINE
 	$('.main-video__play').magnificPopup({
-		type: 'inline',
+		type: 'iframe',
 		removalDelay: 500,
 		closeBtnInside: true,
 		fixedContentPos: false,
+		// items: {
+		//     src:'https://www.youtube.com/watch?v=7eo8XpT4CmM'
+	 //   	},
+	 //  	iframe: {
+		//     	markup: '<div class="mfp-iframe-scaler">'+
+	 //            		'<div class="mfp-close"></div>'+
+	 //            		'<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>'+
+	 //            		'</div>', 
+	 //        patterns: {
+	 //            youtube: {
+		//               index: 'youtube.com/', 
+		//               id: 'v=', 
+		//               src: '//www.youtube.com/embed/%id%?autoplay=1' 
+		// 	        }
+		// 	    },
+		// 	    srcAction: 'iframe_src', 
+	 //    },
 		callbacks: {
 			beforeOpen: function() {
 				this.st.mainClass = this.st.el.attr('data-effect');
 			},
 			open: function(){
 				$('body').addClass('noscroll');
-				$('#popup-video').get(0).play();
 		    },
 		    close: function() {
                  $('body').removeClass('noscroll');
-                 $('#popup-video').get(0).pause();
             }
 		},
 
