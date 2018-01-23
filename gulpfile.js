@@ -32,6 +32,7 @@ gulp.task('scripts', function(){
         'app/libs/slick/slick.min.js',
         'app/libs/rtables/jquery.responsive-tables.js',
         'app/libs/formstyler/jquery.formstyler.min.js',
+        'app/libs/zoom/xzoom.min.js',
     ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())

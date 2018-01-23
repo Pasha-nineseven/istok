@@ -713,6 +713,11 @@ $(document).ready(function() {
 	initialize_single();
 
 	initialize_multiple();
+
+
+	if ($(".image-zoom").length>0) {
+		$(".image-zoom").xzoom({zoomWidth: 400, Xoffset: 15});
+	};
 });
 
 
