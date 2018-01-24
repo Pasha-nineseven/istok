@@ -4937,7 +4937,11 @@ span.page-aside__submenu-item:hover {
   vertical-align: middle;
   text-decoration: none;
   padding: 5px 15px !important;
-  color: #000 !important; }
+  color: #000 !important;
+  -webkit-border-radius: 20px;
+          border-radius: 20px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
   .map-links__item:hover {
     background: #00714e !important;
     color: #fff !important; }
@@ -4948,9 +4952,27 @@ span.page-aside__submenu-item:hover {
 .contacts-address {
   margin-bottom: 30px; }
 
-.map-links__subscribe {
+a.map-links__subscribe {
   float: right;
-  margin-top: 4px; }
+  margin-top: 4px;
+  color: #333333;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 30px;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 30px;
+          border-radius: 30px;
+  font-size: 14px;
+  background: #fff;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  a.map-links__subscribe:hover, a.map-links__subscribe:active {
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.5);
+    background: #fff;
+    color: #000; }
 
 .map-links__wrap {
   overflow: hidden;
@@ -6275,7 +6297,18 @@ button.mfp-arrow {
   .map-links__wrap {
     float: none;
     margin-bottom: 20px;
-    font-size: 14px; } }
+    font-size: 14px; }
+  .zoomWrapper {
+    margin: 0 auto;
+    position: relative; }
+  .product__img {
+    left: 0; }
+  .zoomWindowContainer div {
+    left: 50% !important;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    float: none !important; } }
 
 @media screen and (max-width: 700px) {
   .main-video-wrap {
@@ -6476,7 +6509,19 @@ button.mfp-arrow {
   .construction__slider-item {
     padding-top: 0;
     padding-bottom: 0;
-    min-height: inherit; } }
+    min-height: inherit; }
+  .zoomWrapper {
+    margin: 0 auto;
+    position: relative;
+    height: 100% !important; }
+  .product__img {
+    height: 100%;
+    position: static !important; }
+  .catalog__info {
+    padding-top: 45px; }
+  .workarea a.catalog__btn {
+    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3); } }
 
 @media screen and (max-width: 550px) {
   .main-partners__slider {

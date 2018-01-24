@@ -3902,6 +3902,8 @@ span.page-aside__submenu-item{
 	text-decoration: none;
 	padding: 5px 15px!important;
 	color: #000!important;
+	border-radius: 20px;
+	transition:all 0.3s ease;
 	&:hover{
 		background: #00714e!important;
 		color: #fff!important;
@@ -3915,9 +3917,25 @@ span.page-aside__submenu-item{
 	margin-bottom: 30px;
 }
 
-.map-links__subscribe{
+a.map-links__subscribe{
 	float: right;
 	margin-top: 4px;
+	    color: #333333;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    text-align: center;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    font-size: 14px;
+    background: #fff;
+    transition: all 0.3s ease-in-out;
+    &:hover,
+    &:active{
+    	box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.5);
+    	background: #fff;
+    	color: #000;
+    }
 }
 
 .map-links__wrap{
