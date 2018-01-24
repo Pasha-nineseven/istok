@@ -716,7 +716,12 @@ $(document).ready(function() {
 
 
 	if ($(".image-zoom").length>0) {
-		$(".image-zoom").xzoom({zoomWidth: 400, Xoffset: 15});
+		$(".image-zoom").elevateZoom({
+	    	//gallery:'gallery_01',
+	    	cursor: 'pointer',
+	    	galleryActiveClass: 'active',
+	    	imageCrossfade: true,
+		});
 	};
 });
 
