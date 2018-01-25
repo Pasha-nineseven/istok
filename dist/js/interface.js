@@ -713,6 +713,16 @@ $(document).ready(function() {
 	initialize_single();
 
 	initialize_multiple();
+
+
+	if ($(".image-zoom").length>0) {
+		$(".image-zoom").elevateZoom({
+	    	//gallery:'gallery_01',
+	    	cursor: 'pointer',
+	    	galleryActiveClass: 'active',
+	    	imageCrossfade: true,
+		});
+	};
 });
 
 
